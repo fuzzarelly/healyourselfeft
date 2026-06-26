@@ -472,6 +472,117 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* ================================================
+   SCIENCE SECTION
+   ================================================ */
+.science-body {
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.science-body p { color: var(--text-muted); font-size: 1.05rem; }
+
+.science-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .science-stats { grid-template-columns: repeat(4, 1fr); }
+}
+
+.science-stat {
+  text-align: center;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 24px 16px;
+  box-shadow: var(--shadow-sm);
+  border-bottom: 3px solid var(--blue-300);
+}
+
+.science-stat__num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--navy-600);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.science-stat__label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.science-studies-label {
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.study-cards {
+  display: grid;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+  .study-cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+.study-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--white);
+  border-radius: 10px;
+  padding: 22px 20px;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--blue-300);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.study-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.study-card__journal {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--warm-gold);
+}
+
+.study-card__title {
+  font-family: var(--font-heading);
+  font-size: 0.97rem;
+  color: var(--navy-700);
+  font-weight: 600;
+  line-height: 1.45;
+  flex: 1;
+}
+
+.study-card__link {
+  font-size: 0.85rem;
+  color: var(--blue-300);
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.study-card:hover .study-card__link { color: var(--navy-600); }
+
+/* ================================================
    WHY THIS IS DIFFERENT
    ================================================ */
 .diff-grid {
