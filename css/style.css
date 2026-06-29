@@ -842,6 +842,95 @@ p:last-child { margin-bottom: 0; }
   margin-top: 1px;
 }
 
+.pricing-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 0 32px 24px;
+}
+
+@media (max-width: 560px) {
+  .pricing-options { grid-template-columns: 1fr; padding: 0 20px 20px; }
+}
+
+.pricing-option {
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pricing-option--full {
+  background: var(--navy-700);
+  border: 2px solid var(--navy-700);
+}
+
+.pricing-option--plan {
+  background: var(--white);
+  border: 2px solid var(--blue-100);
+}
+
+.pricing-option__label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pricing-option--full .pricing-option__label { color: var(--blue-100); }
+.pricing-option--plan .pricing-option__label { color: var(--warm-gold); }
+
+.pricing-option__price {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.pricing-option--full .pricing-option__price { color: var(--white); }
+.pricing-option--plan .pricing-option__price { color: var(--navy-700); }
+
+.pricing-option__currency {
+  font-size: 1.3rem;
+  vertical-align: top;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.pricing-option__period {
+  font-size: 1rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+  margin-left: 2px;
+}
+
+.pricing-option--full .pricing-option__period { color: var(--blue-100); }
+.pricing-option--plan .pricing-option__period { color: var(--text-muted); }
+
+.pricing-option__desc {
+  font-size: 0.88rem;
+  margin: 0;
+  flex: 1;
+}
+
+.pricing-option--full .pricing-option__desc { color: var(--blue-100); }
+.pricing-option--plan .pricing-option__desc { color: var(--text-muted); }
+
+.btn--outline-navy {
+  background: transparent;
+  color: var(--navy-600);
+  border: 2px solid var(--navy-400);
+  transition: all var(--transition);
+}
+
+.btn--outline-navy:hover {
+  background: var(--navy-600);
+  color: var(--white);
+  border-color: var(--navy-600);
+}
+
 .pricing-cta { padding: 0 32px 28px; }
 
 .doors-note {
