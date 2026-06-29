@@ -956,6 +956,28 @@ p:last-child { margin-bottom: 0; }
 .testimonial-card__location { font-size: 0.82rem; color: var(--text-muted); }
 
 /* ================================================
+   SOCIALJUICE CAROUSEL
+   ================================================ */
+.socialjuice-wrap {
+  margin-top: 3.5rem;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 32px 24px 24px;
+  box-shadow: var(--shadow-md);
+  border-top: 4px solid var(--blue-300);
+}
+
+.socialjuice-label {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--warm-gold);
+  margin-bottom: 1.25rem;
+}
+
+/* ================================================
    ELIGIBILITY (WHO IS IT FOR)
    ================================================ */
 .eligibility-grid {
