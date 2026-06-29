@@ -676,9 +676,9 @@ p:last-child { margin-bottom: 0; }
 
 .week-card__img {
   width: 100%;
-  height: 220px;
+  height: 300px;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 15%;
   display: block;
 }
 
