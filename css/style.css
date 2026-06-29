@@ -1052,6 +1052,75 @@ p:last-child { margin-bottom: 0; }
 .testimonial-card__location { font-size: 0.82rem; color: var(--text-muted); }
 
 /* ================================================
+   PAYMENT PLAN SECTION
+   ================================================ */
+.payment-plan-wrap {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.payment-plan-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 40px 36px;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--blue-50);
+  text-align: center;
+}
+
+.payment-plan-card__price { margin-bottom: 0; }
+
+.payment-plan-card__amount {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--navy-700);
+  line-height: 1;
+}
+
+.payment-plan-card__per {
+  font-size: 1.1rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 4px;
+}
+
+.payment-plan-card__divider {
+  height: 1px;
+  background: var(--blue-50);
+  margin: 24px 0;
+}
+
+.payment-plan-card__list {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.payment-plan-card__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--text-body);
+}
+
+.payment-plan-card__list li::before {
+  content: '✓';
+  color: var(--blue-300);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+@media (max-width: 560px) {
+  .payment-plan-card { padding: 28px 20px; }
+}
+
+/* ================================================
    SOCIALJUICE CAROUSEL
    ================================================ */
 .socialjuice-wrap {
