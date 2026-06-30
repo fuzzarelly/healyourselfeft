@@ -212,7 +212,7 @@
       emoji     = '💙';
       typeLabel = 'The Physical Healer';
       title     = 'Your Body Is Calling For Emotional Release';
-      body      = 'Your symptoms have physical roots — but research shows that unprocessed emotions are often the hidden driver. EFT Tapping directly addresses this mind-body connection, and the Heal Yourself with EFT program is designed precisely for people like you.';
+      body      = 'Your symptoms have physical roots, but research shows that unprocessed emotions are often the hidden driver. EFT Tapping directly addresses this mind-body connection, and the Heal Yourself with EFT program is designed precisely for people like you.';
     } else if (counts['1'] >= counts['0'] && counts['1'] >= counts['2']) {
       type      = 'emotional';
       emoji     = '🌊';
@@ -224,7 +224,7 @@
       emoji     = '✨';
       typeLabel = 'The Whole-Body Healer';
       title     = 'Both Your Body & Mind Are Ready to Heal Together';
-      body      = 'You experience the full spectrum — physical symptoms intertwined with emotional patterns. This is exactly what the Heal Yourself with EFT program addresses: a holistic, step-by-step journey to clear both the physical and emotional roots of your challenges.';
+      body      = 'You experience the full spectrum, physical symptoms intertwined with emotional patterns. This is exactly what the Heal Yourself with EFT program addresses: a holistic, step-by-step journey to clear both the physical and emotional roots of your challenges.';
     }
 
     // Populate result
