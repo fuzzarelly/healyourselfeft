@@ -190,26 +190,31 @@ p:last-child { margin-bottom: 0; }
    ANNOUNCEMENT BAR
    ================================================ */
 .announcement-bar {
-  background: var(--warm-gold);
-  color: var(--white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  background: #e8952a;
+  color: var(--navy-900);
   text-align: center;
-  padding: 9px var(--container-pad);
-  font-size: 0.85rem;
+  padding: 10px var(--container-pad);
+  font-size: 0.88rem;
   font-weight: 600;
   line-height: 1.4;
 }
 
 .announcement-bar a {
-  color: var(--white);
+  color: var(--navy-900);
   text-decoration: underline;
   margin-left: 10px;
   white-space: nowrap;
   font-weight: 700;
 }
 
-.announcement-bar a:hover { opacity: 0.85; color: var(--white); }
+.announcement-bar a:hover { opacity: 0.75; color: var(--navy-900); }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .announcement-bar { font-size: 0.78rem; }
   .announcement-bar a { display: block; margin: 4px 0 0; }
 }
@@ -219,7 +224,7 @@ p:last-child { margin-bottom: 0; }
    ================================================ */
 .site-header {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 42px; left: 0; right: 0;
   z-index: 1000;
   background: var(--navy-800);
   padding: 16px 0;
