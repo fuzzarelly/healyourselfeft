@@ -230,7 +230,7 @@ p:last-child { margin-bottom: 0; }
    ================================================ */
 .site-header {
   position: fixed;
-  top: 42px; left: 0; right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 1000;
   background: var(--navy-800);
   padding: 16px 0;
@@ -322,7 +322,7 @@ p:last-child { margin-bottom: 0; }
   display: flex;
   align-items: center;
   background: linear-gradient(150deg, var(--navy-900) 0%, var(--navy-700) 55%, var(--navy-500) 100%);
-  padding-top: 130px;
+  padding-top: 90px;
   overflow: hidden;
 }
 
@@ -418,6 +418,38 @@ p:last-child { margin-bottom: 0; }
 @media (min-width: 540px) {
   .hero__cta { flex-direction: row; justify-content: center; }
 }
+
+.hero__earlybird {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(232,149,42,0.15);
+  border: 1.5px solid rgba(232,149,42,0.5);
+  border-radius: 8px;
+  padding: 12px 22px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero__earlybird-badge {
+  background: #e8952a;
+  color: var(--navy-900);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.hero__earlybird-text {
+  color: var(--blue-50);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.hero__earlybird-text strong { color: var(--warm-amber); }
 
 .hero__note { font-size: 0.82rem; color: var(--blue-100); opacity: 0.75; }
 
