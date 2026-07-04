@@ -2,6 +2,50 @@
    HEAL YOURSELF WITH EFT — Main JavaScript
    ================================================ */
 
+// Exit intent + 40-second timed popup
+(function () {
+  var popup = document.getElementById('popup');
+  if (!popup) return;
+
+  var shown = false;
+
+  function show() {
+    if (shown) return;
+    if (sessionStorage.getItem('popupShown')) return;
+    shown = true;
+    sessionStorage.setItem('popupShown', '1');
+    popup.classList.add('active');
+  }
+
+  function hide() {
+    popup.classList.remove('active');
+  }
+
+  // 40-second timer
+  var timer = setTimeout(show, 40000);
+
+  // Exit intent — mouse leaves top of viewport (desktop)
+  document.addEventListener('mouseleave', function (e) {
+    if (e.clientY <= 0) show();
+  });
+
+  // Close buttons
+  var closeBtn = document.getElementById('popup-close');
+  var dismissBtn = document.getElementById('popup-dismiss');
+  if (closeBtn) closeBtn.addEventListener('click', hide);
+  if (dismissBtn) dismissBtn.addEventListener('click', hide);
+
+  // Close on overlay click
+  popup.addEventListener('click', function (e) {
+    if (e.target === popup) hide();
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') hide();
+  });
+}());
+
 // Sticky header on scroll
 (function () {
   var header = document.querySelector('.site-header');
