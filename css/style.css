@@ -385,6 +385,13 @@ p:last-child { margin-bottom: 0; }
   color: var(--white);
   font-weight: 600;
   opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.hero__risk {
+  font-size: 0.82rem;
+  color: var(--blue-100);
+  opacity: 0.8;
   margin-bottom: 2.5rem;
 }
 
