@@ -1331,6 +1331,33 @@ p:last-child { margin-bottom: 0; }
 .guarantee-box p  { color: var(--text-muted); font-size: 1rem; }
 
 /* ================================================
+   FREE MAP OFFER (MID-PAGE)
+   ================================================ */
+.freemap-card {
+  max-width: 420px;
+  margin: 2.5rem auto 0;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 40px 36px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--blue-50);
+}
+
+.freemap-card__img {
+  max-width: 220px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  margin: 0 auto 24px;
+  display: block;
+}
+
+@media (max-width: 560px) {
+  .freemap-card { padding: 28px 20px; }
+}
+
+/* ================================================
    WAITLIST FORM
    ================================================ */
 .waitlist-form {
@@ -2023,9 +2050,17 @@ p:last-child { margin-bottom: 0; }
   gap: 10px;
 }
 
+.mbm-hero__img--mobile { display: none; }
+
 @media (max-width: 600px) {
   .mbm-hero { padding: 105px 0 50px; }
   .mbm-form-card { padding: 22px 20px; max-width: 100%; }
+  .mbm-hero__image { display: none; }
+  .mbm-hero__img--mobile {
+    display: block;
+    max-width: 260px;
+    margin: 0 auto 1.5rem;
+  }
 }
 
 /* ================================================

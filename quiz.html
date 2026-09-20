@@ -99,6 +99,12 @@
     .mh-cap__hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
     @media(max-width:520px){.mh-cap__row input[type=text],.mh-cap__row input[type=email]{flex:1 1 100%;}}
 
+    /* Mind-Body Map opt-in */
+    .mh-cap--map{text-align:center;}
+    .mh-cap--map .mh-cap__img{display:block;max-width:170px;width:100%;margin:0 auto 16px;border-radius:12px;box-shadow:0 8px 26px rgba(0,0,0,.14);}
+    .mh-cap--map h3{text-align:center;}
+    .mh-cap--map p.mh-cap__sub{text-align:center;max-width:440px;margin-left:auto;margin-right:auto;}
+
     /* style SendFox's own markup, left structurally untouched */
     .mh-cap form.sendfox-form p{margin:0 0 10px;}
     .mh-cap form.sendfox-form label{display:block;font-size:.8rem;margin-bottom:4px;opacity:.85;}
@@ -347,19 +353,11 @@
         <p style="font-size: 0.82rem; color: var(--text-muted);">🔥 You Can Start Tonight &bull; 14-day money-back guarantee</p>
       </div>
 
-    <div class="mh-cap mh-cap--secondary" id="mh-cap-hye">
+    <div class="mh-cap mh-cap--primary mh-cap--map" id="mh-cap-map">
+      <img src="images/mind body map.png" alt="The 100 Mind-Body Map — free guide preview" class="mh-cap__img" />
       <h3>Not ready to enrol today?</h3>
-      <p class="mh-cap__sub">Get a free 10 minute body healing script. You can use it tonight.</p>
-      <form method="post" action="https://sendfox.com/form/m44x5n/10yp8q" class="sendfox-form" id="10yp8q" data-async="true" data-recaptcha="true" data-quiz="heal_yourself" data-branch="result">
-          <p><label for="sendfox_form_name">First Name: </label><input type="text" id="sendfox_form_name" placeholder="First Name" name="first_name" required /></p>
-          <p><label for="sendfox_form_email">Email: </label><input type="email" id="sendfox_form_email" placeholder="Email" name="email" required /></p>
-          <!-- no botz please -->
-          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="a_password" tabindex="-1" value="" autocomplete="off" /></div>
-          <p><button type="submit" class="mh-cap__btn">Send me the script</button></p>
-        </form>
-      <div class="mh-cap__done">
-        <strong>On its way.</strong> Check your inbox in the next couple of minutes. If it is not there, have a look in promotions or spam.
-      </div>
+      <p class="mh-cap__sub">Get your free copy of The 100 Mind-Body Map — 115 conditions and the emotions that may sit beneath them.</p>
+      <a href="https://healyourselfeft.com/mind-body-map" class="btn btn--primary">Download the Free Map</a>
     </div>
 
 
