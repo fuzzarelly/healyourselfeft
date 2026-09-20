@@ -38,6 +38,33 @@
     .mdl-hero__inner { max-width: 640px; margin: 0 auto; text-align: center; }
     .mdl-download { margin-top: 2rem; }
 
+    .mdl-hero__img {
+      max-width: 180px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+      border: 3px solid rgba(255,255,255,0.12);
+      margin: 0 auto 1.75rem;
+      display: block;
+    }
+
+    .mdl-confirm {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 12px;
+      padding: 18px 20px;
+      max-width: 480px;
+      margin: 0 auto 1.75rem;
+      text-align: left;
+    }
+
+    .mdl-confirm__icon { font-size: 1.4rem; line-height: 1; flex-shrink: 0; }
+
+    .mdl-confirm p { color: var(--blue-50); font-size: 0.95rem; line-height: 1.6; margin: 0; }
+
     .mdl-stat {
       font-weight: 700;
       color: var(--navy-700);
@@ -151,13 +178,20 @@
           Look up what your body is doing, and see what tends to sit underneath it. Save this one. Most people come back to it more than once.
         </p>
 
+        <img src="images/mind body map.png" alt="The 100 Mind-Body Map — preview" class="mdl-hero__img" />
+
+        <div class="mdl-confirm">
+          <span class="mdl-confirm__icon">🎉</span>
+          <p>Congrats! It's being sent to your email inbox right now — be sure to check your inbox to make sure you got it. You can also download the map by clicking the button below.</p>
+        </div>
+
         <div class="mdl-download">
           <div class="payment-plan-wrap">
             <div class="payment-plan-card">
               <p class="mdl-stat">115 conditions &middot; 16 body systems</p>
 
               <!-- This link changes if the PDF moves off Google Drive. -->
-              <a id="mbm-dl" href="https://drive.google.com/uc?export=download&amp;id=1tZkPo3sxpLe92E1BeL5gY0NrQ7bHpQgk" target="_blank" rel="noopener" class="btn btn--primary btn--lg btn--full">Download the Map</a>
+              <a id="mbm-dl" href="https://drive.google.com/uc?export=download&amp;id=1IaehhOSTSdBQgfdREQL8YQdq9p_AOOsa" target="_blank" rel="noopener" class="btn btn--primary btn--lg btn--full">Download the Map</a>
 
               <p class="mdl-note">It opens in a new tab. Check your downloads folder if you don't see it.</p>
             </div>
