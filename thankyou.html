@@ -7,13 +7,32 @@
   <meta name="description" content="Thank you for joining the Heal Yourself with EFT waitlist. We'll be in touch soon with your early access details." />
   <meta name="robots" content="noindex, nofollow" />
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-21LWXVTL0B"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6HFTYSBJ0B"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+
+    /* Main property - one property across every domain, with cross-domain linking. */
+    gtag('config', 'G-6HFTYSBJ0B', {
+      linker: { domains: [
+        'michaelhetherington.com',
+        'www.michaelhetherington.com',
+        'healyourselfeft.com',
+        'healyourdigestioneft.com',
+        'eftpractitionertraining.com',
+        'mindbodymedicineacademy.onlinecoursehost.com'
+      ] }
+    });
+
+    /* Google Ads - builds remarketing audiences from sales-page visitors. */
+    gtag('config', 'AW-1016615342');
+
+    /* Original property, kept so existing reports stay continuous. */
     gtag('config', 'G-21LWXVTL0B');
+
+    gtag('event', 'waitlist_signup', { 'event_category': 'conversion' });
   </script>
 
   <!-- Favicon -->
