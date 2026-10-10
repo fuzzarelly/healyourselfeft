@@ -267,7 +267,18 @@
     }
 
     .mdl-offer__list--pains li { padding-left: 0; }
-    .mdl-offer__list--pains li::before { content: none; }
+
+    /* Inline rather than absolute, so the bullet travels with the centred line */
+    .mdl-offer__list--pains li::before {
+      content: "•";
+      position: static;
+      width: auto;
+      height: auto;
+      border-radius: 0;
+      background: none;
+      color: var(--offer-terracotta);
+      margin-right: 8px;
+    }
 
     .mdl-offer__kicker {
       font-family: var(--font-body);
@@ -316,30 +327,6 @@
 
     .mdl-offer__pricing { margin-top: 28px; }
 
-    .mdl-offer__price {
-      display: flex;
-      align-items: baseline;
-      justify-content: center;
-      gap: 18px;
-      font-family: var(--font-heading);
-      font-size: 6.2rem;
-      line-height: 1;
-      margin: 0 0 14px;
-    }
-
-    .mdl-offer__was {
-      color: var(--text-light);
-      font-weight: 400;
-      text-decoration: line-through;
-      text-decoration-color: var(--offer-terracotta);
-      text-decoration-thickness: 9px;
-    }
-
-    .mdl-offer__now {
-      font-weight: 700;
-      color: var(--offer-navy);
-    }
-
     @keyframes mdl-urgent {
       0%, 100% { transform: scale(1);     box-shadow: 0 0 0 0   rgba(196,113,74,0); }
       50%      { transform: scale(1.025); box-shadow: 0 0 0 7px rgba(196,113,74,0.13); }
@@ -364,8 +351,18 @@
       background: var(--offer-terracotta);
       border-color: var(--offer-terracotta);
       color: var(--white);
-      font-size: 1.12rem;
-      padding: 19px 28px;
+      font-size: 1.28rem;
+      padding: 22px 26px;
+      line-height: 1.35;
+    }
+
+    .mdl-offer__btn s {
+      font-weight: 400;
+      opacity: 0.85;
+      margin-right: 2px;
+      text-decoration: line-through;
+      text-decoration-thickness: 3px;
+      text-decoration-color: rgba(255,255,255,0.9);
     }
 
     .mdl-offer__btn:hover {
@@ -388,8 +385,16 @@
       font-family: var(--font-body);
       font-size: 0.82rem;
       color: var(--text-muted);
-      margin: 12px 0 0;
+      margin: 26px 0 0;
       letter-spacing: 0.02em;
+    }
+
+    .mdl-offer__pay {
+      font-family: var(--font-body);
+      font-size: 0.76rem;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+      margin: 5px 0 0;
     }
 
     .mdl-offer__decline {
@@ -413,10 +418,9 @@
       .mdl-offer__body { padding: 26px 22px; }
       .mdl-offer__sub { font-size: 1.2rem; }
       .mdl-offer__pull { font-size: 1.1rem; }
-      .mdl-offer__price { font-size: 4rem; gap: 14px; }
       .mdl-offer p, .mdl-offer__list li, .mdl-offer__kicker { font-size: 0.95rem; }
       .mdl-offer__teacher { font-size: 0.84rem; }
-      .mdl-offer__btn { font-size: 1.02rem; padding: 17px 18px; }
+      .mdl-offer__btn { font-size: 1.08rem; padding: 18px 16px; }
     }
   </style>
 </head>
@@ -518,16 +522,12 @@
             -->
 
             <div class="mdl-offer__pricing">
-              <p class="mdl-offer__price">
-                <s class="mdl-offer__was">$47</s>
-                <span class="mdl-offer__now">$9</span>
-              </p>
-
               <p class="mdl-offer__urgency">This page only! Once you close this, this discounted price is gone.</p>
 
-              <a id="mbm-anxiety-offer" href="https://zylvie.com/michaelhetherington/cart/add/G09gYO89?disable_backlinks&amp;empty_cart" target="_blank" rel="noopener" class="btn mdl-offer__btn">Yes, show me how to clear it for $9</a>
+              <a id="mbm-anxiety-offer" href="https://zylvie.com/michaelhetherington/cart/add/G09gYO89?disable_backlinks&amp;empty_cart" target="_blank" rel="noopener" class="btn mdl-offer__btn">Yes, show me how to clear it for <s>$47</s> ONLY $9!</a>
 
-              <p class="mdl-offer__secure">&#128274; Secure checkout</p>
+              <p class="mdl-offer__secure">&#128274; Secure Checkout</p>
+              <p class="mdl-offer__pay">Visa, Paypal, Stripe</p>
             </div>
 
             <a href="#mbm-dl" class="mdl-offer__decline">No thanks, I'll just take my map</a>
