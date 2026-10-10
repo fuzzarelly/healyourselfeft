@@ -115,6 +115,11 @@
       text-align: center;
     }
 
+    /* ---- Download card, trimmed down so the hook headline sits higher ---- */
+    .mdl-download .payment-plan-wrap { max-width: 460px; }
+    .mdl-download .payment-plan-card { padding: 26px 26px; }
+    .mdl-download .mdl-stat { margin-bottom: 1.1rem; }
+
     /* ---- Scroll hook headline, sits on the navy straight under the download card ---- */
     .mdl-hook {
       max-width: 660px;
@@ -205,7 +210,6 @@
       line-height: 1.35;
       color: var(--offer-navy);
       margin: 0 0 20px;
-      text-align: center;
     }
 
     .mdl-offer p {
@@ -214,7 +218,7 @@
       line-height: 1.7;
       color: var(--text-body);
       margin: 0 0 14px;
-      text-align: left;
+      text-align: center;
     }
 
     .mdl-offer__pull {
@@ -226,7 +230,6 @@
       border-bottom: 1px solid rgba(196,113,74,0.3);
       padding: 18px 8px;
       margin: 24px 0 0;
-      text-align: center;
     }
 
     .mdl-offer__subhead {
@@ -236,14 +239,17 @@
       letter-spacing: 0.13em;
       text-transform: uppercase;
       color: var(--offer-navy);
-      text-align: left;
       margin: 28px 0 14px;
     }
 
+    /* Inline block so the list centres as a unit while each line still
+       reads from a shared left edge. */
     .mdl-offer__list {
+      display: inline-block;
       list-style: none;
       margin: 0;
       padding: 0;
+      max-width: 100%;
       text-align: left;
     }
 
@@ -286,8 +292,17 @@
       font-size: 1rem;
       line-height: 1.6;
       color: var(--offer-navy);
-      margin: 18px 0 0;
-      text-align: center;
+      margin: 20px 0 0;
+    }
+
+    .mdl-offer__teacher {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(27,43,75,0.1);
+      padding-top: 16px;
+      margin: 20px 0 0;
     }
 
     /* Styling is ready for a real review. See the commented block in the markup. */
@@ -307,6 +322,7 @@
       line-height: 1.6;
       color: var(--offer-navy);
       margin: 0 0 8px;
+      text-align: left;
     }
 
     .mdl-offer__quote cite {
@@ -316,41 +332,29 @@
       color: var(--text-muted);
     }
 
-    .mdl-offer__teacher {
-      font-family: var(--font-body);
-      font-size: 0.88rem;
-      line-height: 1.6;
-      color: var(--text-muted);
-      border-top: 1px solid rgba(27,43,75,0.1);
-      padding-top: 16px;
-      margin: 20px 0 0;
-      text-align: center;
-    }
-
     .mdl-offer__pricing { margin-top: 28px; }
 
     .mdl-offer__price {
       display: flex;
       align-items: baseline;
       justify-content: center;
-      gap: 16px;
+      gap: 18px;
       font-family: var(--font-heading);
+      font-size: 3.1rem;
+      line-height: 1;
       margin: 0 0 14px;
-      text-align: center;
     }
 
     .mdl-offer__was {
-      font-size: 2.2rem;
       color: var(--text-light);
+      font-weight: 400;
       text-decoration: line-through;
       text-decoration-color: var(--offer-terracotta);
-      text-decoration-thickness: 4px;
+      text-decoration-thickness: 5px;
     }
 
     .mdl-offer__now {
-      font-size: 3.6rem;
       font-weight: 700;
-      line-height: 1;
       color: var(--offer-navy);
     }
 
@@ -364,7 +368,6 @@
       border-radius: 8px;
       padding: 11px 16px;
       margin: 0 0 20px;
-      text-align: center;
     }
 
     /* Deliberately lighter than the gold Download button above it. */
@@ -393,12 +396,12 @@
       box-shadow: var(--shadow-md);
     }
 
-    .mdl-offer__guarantee {
+    .mdl-offer__secure {
       font-family: var(--font-body);
       font-size: 0.82rem;
       color: var(--text-muted);
       margin: 12px 0 0;
-      text-align: center;
+      letter-spacing: 0.02em;
     }
 
     .mdl-offer__decline {
@@ -422,8 +425,7 @@
       .mdl-offer__body { padding: 26px 22px; }
       .mdl-offer__sub { font-size: 1.2rem; }
       .mdl-offer__pull { font-size: 1.1rem; }
-      .mdl-offer__now { font-size: 2.9rem; }
-      .mdl-offer__was { font-size: 1.8rem; }
+      .mdl-offer__price { font-size: 2.5rem; gap: 14px; }
       .mdl-offer p, .mdl-offer__list li, .mdl-offer__kicker { font-size: 0.95rem; }
       .mdl-offer__teacher { font-size: 0.84rem; }
       .mdl-offer__btn { font-size: 0.95rem; padding: 14px 18px; }
@@ -492,14 +494,12 @@
 
             <p>If your anxiety keeps coming back no matter what you try, <strong>it's not because you're doing something wrong.</strong> Your nervous system is still carrying everything it hasn't had the chance to process.</p>
 
-            <p>This is a recorded 90-minute class built around <strong>four powerful guided EFT taps that calm anxiety fast.</strong> We do all four together, start to finish. You are not watching me explain tapping, you are tapping along with me the whole way.</p>
+            <p>This is a recorded 90-minute class built around <strong>four powerful guided EFT taps that calm anxiety fast.</strong> We do all four together, start to finish. You are not watching me explain tapping, you are tapping along with me the whole way. I also walk you through <strong>six bonus techniques</strong> to explore on your own afterwards.</p>
 
             <p class="mdl-offer__pull">Calming anxiety down and clearing it are two different things. This class is about the second one.</p>
 
             <h3 class="mdl-offer__subhead">If this sounds familiar</h3>
             <ul class="mdl-offer__list">
-              <li>The calm lasts a few hours, then the same feeling settles back in</li>
-              <li>You wake at 3am with your mind already going</li>
               <li>A tight chest, shallow breathing, a stomach that will not settle</li>
               <li>You understand exactly why you feel anxious, and it still does not shift</li>
               <li>You have tried breathing, journalling and talking it through, and something underneath stays stuck</li>
@@ -507,16 +507,16 @@
 
             <h3 class="mdl-offer__subhead">What you get</h3>
             <ul class="mdl-offer__list mdl-offer__list--gets">
-              <li><strong>Four guided taps for anxiety</strong>, done with me in real time, not explained at you</li>
-              <li><strong>Six bonus techniques</strong> to explore on your own when you want to go further</li>
-              <li>The full 90-minute class, ready to watch straight away</li>
-              <li>A workbook with every script and worksheet, so you can tap without me</li>
-              <li>Yours to keep, so you can come back to it whenever anxiety flares</li>
+              <li>4 powerful guided taps for anxiety and stress release</li>
+              <li>Immediate access to the full 90-minute class</li>
+              <li>A workbook with every script and worksheet, so you can tap at home</li>
+              <li>Lifetime access so you can come back at any time</li>
+              <li>A full 7 day money back satisfaction guarantee</li>
             </ul>
 
-            <p class="mdl-offer__kicker"><strong>By the end of the 90 minutes, you should feel a real and noticeable shift in how calm your body is.</strong></p>
+            <p class="mdl-offer__kicker"><strong>By the end of this class you will notice a massive shift in your inner state and your relationship to anxiety and stress.</strong></p>
 
-            <p class="mdl-offer__teacher">Taught by Michael Hetherington. Over 15 years working with EFT, and more than 1,000 sessions with people all over the world.</p>
+            <p class="mdl-offer__teacher">Taught by Michael Hetherington (BHlthSci), with over 15 years of experience and more than 1,000 EFT sessions with people all over the world.</p>
 
             <!-- Workbook image goes here when you have it:
             <img src="images/anxiety-class-workbook.png" alt="The anxiety class workbook" class="mdl-offer__img" /> -->
@@ -531,7 +531,7 @@
 
             <div class="mdl-offer__pricing">
               <p class="mdl-offer__price">
-                <s class="mdl-offer__was">$39</s>
+                <s class="mdl-offer__was">$47</s>
                 <span class="mdl-offer__now">$9</span>
               </p>
 
@@ -539,7 +539,7 @@
 
               <a id="mbm-anxiety-offer" href="https://zylvie.com/michaelhetherington/cart/add/G09gYO89?disable_backlinks&amp;empty_cart" target="_blank" rel="noopener" class="btn mdl-offer__btn">Yes, show me how to clear it for $9</a>
 
-              <p class="mdl-offer__guarantee">100% money-back guarantee</p>
+              <p class="mdl-offer__secure">&#128274; Secure checkout</p>
             </div>
 
             <a href="#mbm-dl" class="mdl-offer__decline">No thanks, I'll just take my map</a>
