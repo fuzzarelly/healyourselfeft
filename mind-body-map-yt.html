@@ -93,6 +93,13 @@
       background: var(--warm-gold);
     }
 
+    /* The base h2 carries no bottom margin, so this heading sat on its text */
+    .mbm-story h2 { margin-bottom: 1.4rem; }
+
+    /* This paragraph is wrapped in .reveal, so the .final-cta > .container > p
+       rule in style.css misses it and it fell back to dark body text on navy */
+    .final-cta p { color: var(--white); }
+
     @media (max-width: 560px) {
       .mbm-author {
         flex-direction: column;
@@ -215,7 +222,7 @@
         <span class="section__label">Why I Made This</span>
         <h2>I Made This for Myself, Then Realised How Useful It Was</h2>
         <p>
-          Well, I made it for myself really, then realised how useful it was and thought, let me share it. It's for those times when there's no obvious physical cause for a symptom, so it might be tied to psychological or emotional states, or when you've tried the conventional route and got little relief.
+          Well, I made it for myself really, then realised how useful it was and thought, let me share it. It's for those times when there's no obvious physical cause for a symptom, or when you've tried the conventional route and got little relief.
         </p>
         <p>
           This guide is inspired by the work of Louise Hay, Caroline Myss and Dr David Hawkins, three of the most respected voices connecting the mind and body. I've distilled their insights alongside my own clinical experience into one simple, practical reference.
@@ -265,12 +272,6 @@
     <div class="container">
       <p class="footer-logo">Heal Yourself with EFT</p>
       <p class="footer-tagline">with Michael Hetherington | Made with Love</p>
-
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="quiz.html">Take the Quiz</a>
-        <a href="index.html#faq">FAQ</a>
-      </div>
 
       <p class="footer-copy">&copy; 2026 Michael Hetherington | healyourselfeft.com</p>
 
