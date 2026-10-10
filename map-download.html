@@ -128,7 +128,8 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .mdl-hook__cue span { animation: none; }
+      .mdl-hook__cue span,
+      .mdl-offer__urgency { animation: none; }
     }
 
     /* ---- Anxiety class offer, sits inside the dark hero below the hook ---- */
@@ -257,6 +258,17 @@
       font-weight: 700;
     }
 
+    /* The pain list reads as a centred block, so it drops its bullets */
+    .mdl-offer__list--pains {
+      display: block;
+      max-width: 540px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .mdl-offer__list--pains li { padding-left: 0; }
+    .mdl-offer__list--pains li::before { content: none; }
+
     .mdl-offer__kicker {
       font-family: var(--font-body);
       font-size: 1rem;
@@ -310,7 +322,7 @@
       justify-content: center;
       gap: 18px;
       font-family: var(--font-heading);
-      font-size: 4.4rem;
+      font-size: 6.2rem;
       line-height: 1;
       margin: 0 0 14px;
     }
@@ -320,12 +332,17 @@
       font-weight: 400;
       text-decoration: line-through;
       text-decoration-color: var(--offer-terracotta);
-      text-decoration-thickness: 7px;
+      text-decoration-thickness: 9px;
     }
 
     .mdl-offer__now {
       font-weight: 700;
       color: var(--offer-navy);
+    }
+
+    @keyframes mdl-urgent {
+      0%, 100% { transform: scale(1);     box-shadow: 0 0 0 0   rgba(196,113,74,0); }
+      50%      { transform: scale(1.025); box-shadow: 0 0 0 7px rgba(196,113,74,0.13); }
     }
 
     .mdl-offer__urgency {
@@ -338,6 +355,7 @@
       border-radius: 8px;
       padding: 11px 16px;
       margin: 0 0 20px;
+      animation: mdl-urgent 2.4s ease-in-out infinite;
     }
 
     /* Deliberately lighter than the gold Download button above it. */
@@ -346,8 +364,8 @@
       background: var(--offer-terracotta);
       border-color: var(--offer-terracotta);
       color: var(--white);
-      font-size: 1rem;
-      padding: 15px 24px;
+      font-size: 1.12rem;
+      padding: 19px 28px;
     }
 
     .mdl-offer__btn:hover {
@@ -395,10 +413,10 @@
       .mdl-offer__body { padding: 26px 22px; }
       .mdl-offer__sub { font-size: 1.2rem; }
       .mdl-offer__pull { font-size: 1.1rem; }
-      .mdl-offer__price { font-size: 3.1rem; gap: 14px; }
+      .mdl-offer__price { font-size: 4rem; gap: 14px; }
       .mdl-offer p, .mdl-offer__list li, .mdl-offer__kicker { font-size: 0.95rem; }
       .mdl-offer__teacher { font-size: 0.84rem; }
-      .mdl-offer__btn { font-size: 0.95rem; padding: 14px 18px; }
+      .mdl-offer__btn { font-size: 1.02rem; padding: 17px 18px; }
     }
   </style>
 </head>
@@ -464,12 +482,12 @@
 
             <p>If your anxiety keeps coming back no matter what you try, <strong>it's not because you're doing something wrong.</strong> Your nervous system is still carrying everything it hasn't had the chance to process.</p>
 
-            <p>This is a recorded 90-minute class built around <strong>four powerful guided EFT taps that calm anxiety fast.</strong> We do all four together, start to finish. You are not watching me explain tapping, you are tapping along with me the whole way. I also walk you through <strong>six bonus techniques</strong> to explore on your own afterwards.</p>
+            <p>This is a recorded 90-minute class built around <strong>4 powerful guided EFT taps that calm anxiety fast.</strong> We do all 4 together, start to finish. I also walk you through <strong>6 bonus techniques</strong> to explore on your own afterwards.</p>
 
             <p class="mdl-offer__pull">Calming anxiety down and clearing it are two different things. This class is about the second one.</p>
 
             <h3 class="mdl-offer__subhead">If this sounds familiar</h3>
-            <ul class="mdl-offer__list">
+            <ul class="mdl-offer__list mdl-offer__list--pains">
               <li>A tight chest, shallow breathing, a stomach that will not settle</li>
               <li>You understand exactly why you feel anxious, and it still does not shift</li>
               <li>You have tried breathing, journalling and talking it through, and something underneath stays stuck</li>
@@ -486,7 +504,7 @@
 
             <p class="mdl-offer__kicker"><strong>By the end of this class you will notice a massive shift in your inner state.</strong></p>
 
-            <p class="mdl-offer__teacher">Taught by Michael Hetherington (BHlthSci), with over 15 years of experience and more than 1,000 EFT sessions with people all over the world.</p>
+            <p class="mdl-offer__teacher">Taught by Michael Hetherington (BHlthSci), with over 10 years of experience and more than 1,000 EFT sessions with people all over the world.</p>
 
             <!-- Workbook image goes here when you have it:
             <img src="images/anxiety-class-workbook.png" alt="The anxiety class workbook" class="mdl-offer__img" /> -->
