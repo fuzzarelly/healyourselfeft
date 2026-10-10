@@ -119,11 +119,17 @@
 
     /* The sell, moved below the form so the top of the page stays light */
     .mbm-hero__after {
-      color: var(--blue-100);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin: 1.3rem 0 0;
+      color: var(--white);
+      font-size: 1.08rem;
+      line-height: 1.65;
+      margin: 1.4rem 0 0;
       text-align: center;
+    }
+
+    /* The closing line carries the most weight, so it gets its own line */
+    .mbm-hero__after-line {
+      display: block;
+      margin-top: 0.65rem;
     }
 
     /* Proof. White cards on the navy, directly under the opt-in. */
@@ -239,7 +245,8 @@
           </div>
 
           <p class="mbm-hero__after">
-            Most people know where to tap. They freeze on what to say. These are the 28 I come back to again and again.
+            Most people know where to tap. They freeze on what to say.
+            <span class="mbm-hero__after-line">These are the 28 I come back to again and again.</span>
           </p>
         </div>
 
