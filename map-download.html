@@ -38,7 +38,7 @@
     .mbm-hero { padding-top: 95px; }
     @media (max-width: 600px) { .mbm-hero { padding-top: 75px; } }
 
-    .mdl-hero__inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    .mdl-hero__inner { max-width: 740px; margin: 0 auto; text-align: center; }
     .mdl-download { margin-top: 2rem; }
 
     .mdl-hero__img {
@@ -125,14 +125,53 @@
       text-align: center;
     }
 
-    /* ---- Anxiety class offer, sits inside the dark hero below the download card ---- */
+    /* ---- Scroll hook headline, sits on the navy straight under the download card ---- */
+    .mdl-hook {
+      max-width: 660px;
+      margin: 2.25rem auto 0;
+      text-align: center;
+    }
+
+    .mdl-hook__title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.85rem, 5vw, 2.85rem);
+      font-weight: 700;
+      line-height: 1.18;
+      color: var(--white);
+      margin: 0 0 10px;
+    }
+
+    .mdl-hook__cue {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      letter-spacing: 0.03em;
+      color: var(--blue-100);
+      margin: 0;
+    }
+
+    .mdl-hook__cue span {
+      display: inline-block;
+      margin-left: 6px;
+      animation: mdl-nudge 1.8s ease-in-out infinite;
+    }
+
+    @keyframes mdl-nudge {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(5px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .mdl-hook__cue span { animation: none; }
+    }
+
+    /* ---- Anxiety class offer, sits inside the dark hero below the hook ---- */
     .mdl-offer {
       --offer-navy:       #1B2B4B;
       --offer-terracotta: #C4714A;
       --offer-cream:      #FAF7F2;
 
-      max-width: 620px;
-      margin: 2.75rem auto 0;
+      max-width: 700px;
+      margin: 1.5rem auto 0;
       background: var(--offer-cream);
       border: 1px solid rgba(196,113,74,0.28);
       border-radius: 16px;
@@ -141,29 +180,17 @@
       text-align: center;
     }
 
-    /* Square source, cropped to a banner from the bottom so that the headline
-       burnt into the image and her face both survive the crop. */
     .mdl-offer__banner {
       display: block;
       width: 100%;
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 2 / 1;
       object-fit: cover;
-      object-position: center bottom;
+      object-position: center 38%;
     }
 
-    .mdl-offer__body { padding: 30px 38px; }
+    .mdl-offer__body { padding: 32px 44px; }
 
-    .mdl-offer__sr {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      margin: -1px;
-      padding: 0;
-      overflow: hidden;
-      clip-path: inset(50%);
-      white-space: nowrap;
-      border: 0;
-    }
+    .mdl-offer strong { font-weight: 700; color: var(--offer-navy); }
 
     .mdl-offer__flag {
       display: inline-block;
@@ -181,7 +208,7 @@
 
     .mdl-offer__sub {
       font-family: var(--font-heading);
-      font-size: 1.4rem;
+      font-size: 1.45rem;
       font-weight: 600;
       line-height: 1.35;
       color: var(--offer-navy);
@@ -196,6 +223,18 @@
       color: var(--text-body);
       margin: 0 0 14px;
       text-align: left;
+    }
+
+    .mdl-offer__pull {
+      font-family: var(--font-heading);
+      font-size: 1.24rem;
+      line-height: 1.45;
+      color: var(--offer-navy);
+      border-top: 1px solid rgba(196,113,74,0.3);
+      border-bottom: 1px solid rgba(196,113,74,0.3);
+      padding: 18px 8px;
+      margin: 24px 0 0;
+      text-align: center;
     }
 
     .mdl-offer__subhead {
@@ -250,7 +289,42 @@
       font-weight: 700;
     }
 
-    .mdl-offer__pricing { margin-top: 30px; }
+    .mdl-offer__kicker {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--offer-navy);
+      margin: 18px 0 0;
+      text-align: center;
+    }
+
+    /* Styling is ready for a real review. See the commented block in the markup. */
+    .mdl-offer__quote {
+      margin: 26px 0 0;
+      padding: 20px 22px;
+      background: rgba(27,43,75,0.04);
+      border-left: 3px solid var(--offer-terracotta);
+      border-radius: 0 10px 10px 0;
+      text-align: left;
+    }
+
+    .mdl-offer__quote p {
+      font-family: var(--font-heading);
+      font-size: 1.06rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--offer-navy);
+      margin: 0 0 8px;
+    }
+
+    .mdl-offer__quote cite {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-style: normal;
+      color: var(--text-muted);
+    }
+
+    .mdl-offer__pricing { margin-top: 28px; }
 
     .mdl-offer__price {
       display: flex;
@@ -340,12 +414,14 @@
     #mbm-dl { scroll-margin-top: 120px; }
 
     @media (max-width: 600px) {
-      .mdl-offer { margin-top: 2rem; }
+      .mdl-hook { margin-top: 1.9rem; }
+      .mdl-offer { margin-top: 1.25rem; }
       .mdl-offer__body { padding: 26px 22px; }
       .mdl-offer__sub { font-size: 1.2rem; }
+      .mdl-offer__pull { font-size: 1.1rem; }
       .mdl-offer__now { font-size: 2.9rem; }
       .mdl-offer__was { font-size: 1.8rem; }
-      .mdl-offer p, .mdl-offer__list li { font-size: 0.95rem; }
+      .mdl-offer p, .mdl-offer__list li, .mdl-offer__kicker { font-size: 0.95rem; }
       .mdl-offer__btn { font-size: 0.95rem; padding: 14px 18px; }
     }
   </style>
@@ -393,24 +469,30 @@
         </div>
 
         <!-- ================================================
+             SCROLL HOOK, kept out of .reveal so it is painted immediately
+             ================================================ -->
+        <div class="mdl-hook">
+          <h2 class="mdl-hook__title">Why Your Anxiety Keeps Coming Back</h2>
+          <p class="mdl-hook__cue">Read this before you close the page <span aria-hidden="true">&darr;</span></p>
+        </div>
+
+        <!-- ================================================
              ANXIETY CLASS OFFER
              ================================================ -->
         <div class="mdl-offer reveal">
 
-          <!-- The headline is burnt into this image. The h2 below repeats it
-               for screen readers so the card still has a real heading. -->
-          <img src="images/anxiety-class.jpg" alt="Why Your Anxiety Keeps Coming Back" class="mdl-offer__banner" width="800" height="800" loading="lazy" />
+          <img src="images/anxiety-class.jpg" alt="A woman tapping on the side of her eye with her eyes closed" class="mdl-offer__banner" width="1400" height="700" loading="lazy" />
 
           <div class="mdl-offer__body">
-            <h2 class="mdl-offer__sr">Why Your Anxiety Keeps Coming Back</h2>
-
             <span class="mdl-offer__flag">Only on this page</span>
 
             <p class="mdl-offer__sub">Your map shows where anxiety is stored. This class shows you how to clear it.</p>
 
-            <p>If your anxiety keeps coming back no matter what you try, it's not because you're doing something wrong. Your nervous system is still carrying everything it hasn't had the chance to process.</p>
+            <p>If your anxiety keeps coming back no matter what you try, <strong>it's not because you're doing something wrong.</strong> Your nervous system is still carrying everything it hasn't had the chance to process.</p>
 
             <p>In this recorded 90-minute class, I show you how to start clearing that backlog with 10 EFT tools, so you're not just calming it down for a few hours.</p>
+
+            <p class="mdl-offer__pull">Calming anxiety down and clearing it are two different things. This class is about the second one.</p>
 
             <h3 class="mdl-offer__subhead">If this sounds familiar</h3>
             <ul class="mdl-offer__list">
@@ -429,8 +511,18 @@
               <li>Watch straight away and keep it forever</li>
             </ul>
 
+            <p class="mdl-offer__kicker"><strong>You can tap through the first tool tonight.</strong></p>
+
             <!-- Workbook image goes here when you have it:
             <img src="images/anxiety-class-workbook.png" alt="The anxiety class workbook" class="mdl-offer__img" /> -->
+
+            <!-- REVIEW. Paste a real one from a student and delete this comment wrapper.
+                 Styling is already done, so it will look right as soon as it is uncommented.
+            <blockquote class="mdl-offer__quote">
+              <p>Their words here.</p>
+              <cite>First name, location</cite>
+            </blockquote>
+            -->
 
             <div class="mdl-offer__pricing">
               <p class="mdl-offer__price">
@@ -444,13 +536,6 @@
 
               <p class="mdl-offer__guarantee">100% money-back guarantee</p>
             </div>
-
-            <!-- TESTIMONIAL. Uncomment and fill in when you have one you want to use.
-            <blockquote class="mdl-offer__quote">
-              <p>Quote goes here.</p>
-              <cite>First name, location</cite>
-            </blockquote>
-            -->
 
             <a href="#mbm-dl" class="mdl-offer__decline">No thanks, I'll just take my map</a>
           </div>
