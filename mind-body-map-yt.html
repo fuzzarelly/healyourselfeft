@@ -32,6 +32,77 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css?v=3" />
+
+  <style>
+    /* Author block in the "why I made this" section. Page local, so it cannot
+       disturb the dark bio section on the home page, which uses .bio-* classes. */
+    .mbm-author {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      max-width: 540px;
+      margin: 2.75rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid var(--cream-dark);
+      text-align: left;
+    }
+
+    .mbm-author__photo {
+      width: 140px;
+      height: 140px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      background: var(--cream);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Two classes deep, otherwise .mbm-story p wins on specificity */
+    .mbm-author .mbm-author__name {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy-700);
+      margin: 0 0 10px;
+    }
+
+    .mbm-author__creds {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .mbm-author__creds li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 6px;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+
+    .mbm-author__creds li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--warm-gold);
+    }
+
+    @media (max-width: 560px) {
+      .mbm-author {
+        flex-direction: column;
+        text-align: center;
+        gap: 18px;
+      }
+      .mbm-author__photo { width: 120px; height: 120px; }
+      .mbm-author__creds { display: inline-block; text-align: left; }
+    }
+  </style>
 </head>
 <body>
 
@@ -74,9 +145,6 @@
           <img src="images/mind body map.png" alt="The 100 Mind-Body Map — free guide preview" class="mbm-hero__img mbm-hero__img--mobile" />
 
           <div class="mbm-form-card" id="optin">
-            <h3 class="mbm-form-card__title">Get Instant Free Access</h3>
-            <p class="mbm-form-card__sub">Enter your email and I'll send the guide straight to your inbox.</p>
-
             <!-- ================================================
                  SENDFOX OPT-IN FORM
                  ================================================ -->
@@ -152,6 +220,19 @@
         <p>
           This guide is inspired by the work of Louise Hay, Caroline Myss and Dr David Hawkins, three of the most respected voices connecting the mind and body. I've distilled their insights alongside my own clinical experience into one simple, practical reference.
         </p>
+
+        <div class="mbm-author">
+          <img src="images/michael-bio-circle.jpg" alt="Michael Hetherington" class="mbm-author__photo" width="520" height="520" loading="lazy" />
+          <div>
+            <p class="mbm-author__name">Michael Hetherington</p>
+            <ul class="mbm-author__creds">
+              <li>Bachelor of Health Science (Chinese Medicine)</li>
+              <li>Postgraduate Diploma of Counselling</li>
+              <li>EFT Tapping Expert and Trainer</li>
+              <li>Over 10 Years of Experience</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
