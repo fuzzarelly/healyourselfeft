@@ -34,7 +34,7 @@
   <link rel="stylesheet" href="css/style.css?v=3" />
 
   <style>
-    /* Page-specific layout only — colours, type and spacing all come from css/style.css tokens */
+    /* Page-specific layout only, colours, type and spacing all come from css/style.css tokens */
     .mbm-hero { padding-top: 95px; }
     @media (max-width: 600px) { .mbm-hero { padding-top: 75px; } }
 
@@ -125,27 +125,164 @@
       text-align: center;
     }
 
+    /* ---- Anxiety class offer, sits inside the dark hero below the download card ---- */
     .mdl-offer {
-      max-width: 640px;
-      margin: 0 auto;
-      background: var(--blue-25);
-      border: 1.5px solid var(--blue-50);
+      --offer-navy:       #1B2B4B;
+      --offer-terracotta: #C4714A;
+      --offer-cream:      #FAF7F2;
+
+      max-width: 540px;
+      margin: 2.5rem auto 0;
+      background: var(--offer-cream);
+      border: 1px solid rgba(196,113,74,0.28);
       border-radius: 16px;
-      padding: 40px 36px;
+      padding: 32px 30px 28px;
+      box-shadow: var(--shadow-md);
       text-align: center;
     }
 
-    .mdl-offer p { color: var(--text-muted); }
-
-    .mdl-offer__price {
+    .mdl-offer__flag {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.72rem;
       font-weight: 700;
-      color: var(--navy-700);
-      font-size: 1.05rem;
-      margin: 1rem 0 1.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--offer-terracotta);
+      background: rgba(196,113,74,0.1);
+      border-radius: 100px;
+      padding: 6px 14px;
+      margin-bottom: 18px;
     }
 
+    .mdl-offer__title {
+      font-family: var(--font-heading);
+      font-size: 1.45rem;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--offer-navy);
+      margin: 0 0 18px;
+    }
+
+    .mdl-offer p {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-body);
+      margin: 0 0 14px;
+      text-align: left;
+    }
+
+    /* Placeholder frame for the workbook image. Delete this rule once the image is in. */
+    .mdl-offer__media {
+      margin: 22px 0;
+      padding: 30px 16px;
+      border: 1px dashed rgba(27,43,75,0.22);
+      border-radius: 12px;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    .mdl-offer__img {
+      display: block;
+      width: 100%;
+      max-width: 240px;
+      margin: 22px auto;
+      border-radius: 10px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .mdl-offer__list {
+      list-style: none;
+      margin: 0 0 22px;
+      padding: 0;
+      text-align: left;
+    }
+
+    .mdl-offer__list li {
+      position: relative;
+      padding-left: 26px;
+      margin-bottom: 10px;
+      font-family: var(--font-body);
+      font-size: 0.97rem;
+      line-height: 1.6;
+      color: var(--text-body);
+    }
+
+    .mdl-offer__list li::before {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 0.6em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--offer-terracotta);
+    }
+
+    .mdl-offer__price {
+      font-family: var(--font-heading);
+      font-size: 1.9rem;
+      color: var(--offer-navy);
+      margin: 0 0 18px;
+      text-align: center;
+    }
+
+    .mdl-offer__price s {
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--text-light);
+      margin-right: 8px;
+    }
+
+    /* Deliberately lighter than the gold Download button above it. */
+    .mdl-offer__btn {
+      display: block;
+      background: var(--offer-terracotta);
+      border-color: var(--offer-terracotta);
+      color: var(--white);
+      font-size: 0.97rem;
+      padding: 13px 24px;
+    }
+
+    .mdl-offer__btn:hover {
+      background: #ad5f3c;
+      border-color: #ad5f3c;
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    .mdl-offer__guarantee {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin: 12px 0 0;
+      text-align: center;
+    }
+
+    .mdl-offer__decline {
+      display: inline-block;
+      margin-top: 18px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--text-light);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .mdl-offer__decline:hover { color: var(--text-muted); }
+
+    /* So the "no thanks" link does not park the button under the fixed header. */
+    #mbm-dl { scroll-margin-top: 120px; }
+
     @media (max-width: 600px) {
-      .mdl-offer { padding: 28px 22px; }
+      .mdl-offer { padding: 26px 20px 24px; margin-top: 2rem; }
+      .mdl-offer__title { font-size: 1.25rem; }
+      .mdl-offer__price { font-size: 1.65rem; }
+      .mdl-offer p, .mdl-offer__list li { font-size: 0.95rem; }
     }
   </style>
 </head>
@@ -173,10 +310,10 @@
 
         <div class="mdl-confirm">
           <span class="mdl-confirm__icon">🎉</span>
-          <p>Congrats! It's being sent to your email inbox right now — be sure to check your inbox to make sure you got it. You can also download the map by clicking the button below.</p>
+          <p>You're in. Your map is on its way to your inbox. You can also download it right now below.</p>
         </div>
 
-        <img src="images/mind body map.png" alt="The 100 Mind-Body Map — preview" class="mdl-hero__img" />
+        <img src="images/mind body map.png" alt="The 100 Mind-Body Map preview" class="mdl-hero__img" />
 
         <div class="mdl-download">
           <div class="payment-plan-wrap">
@@ -189,6 +326,44 @@
               <p class="mdl-note">It opens in a new tab. Check your downloads folder if you don't see it.</p>
             </div>
           </div>
+        </div>
+
+        <!-- ================================================
+             ANXIETY CLASS OFFER
+             ================================================ -->
+        <div class="mdl-offer reveal">
+          <span class="mdl-offer__flag">Only on this page</span>
+
+          <h2 class="mdl-offer__title">Your map shows where anxiety is stored. This class shows you how to clear it.</h2>
+
+          <p>If your anxiety keeps coming back no matter what you try, it's not because you're doing something wrong. Your nervous system is still carrying everything it hasn't had the chance to process.</p>
+
+          <p>In this recorded 90-minute class, I show you how to start clearing that backlog with 10 EFT tools, so you're not just calming it down for a few hours.</p>
+
+          <!-- Workbook image goes here. Swap the placeholder div below for the img line. -->
+          <!-- <img src="images/anxiety-class-workbook.png" alt="The anxiety class workbook" class="mdl-offer__img" /> -->
+          <div class="mdl-offer__media">Workbook image</div>
+
+          <ul class="mdl-offer__list">
+            <li>The full 90-minute class, tap along at home</li>
+            <li>Workbook with all 10 EFT tools, scripts and worksheets</li>
+            <li>Watch straight away and keep it forever</li>
+          </ul>
+
+          <p class="mdl-offer__price"><s>$39</s> $9</p>
+
+          <a id="mbm-anxiety-offer" href="https://zylvie.com/michaelhetherington/p/anxiety-class-map-special" target="_blank" rel="noopener" class="btn mdl-offer__btn">Yes, show me how to clear it for $9</a>
+
+          <p class="mdl-offer__guarantee">100% money-back guarantee</p>
+
+          <!-- TESTIMONIAL. Uncomment and fill in when you have one you want to use.
+          <blockquote class="mdl-offer__quote">
+            <p>Quote goes here.</p>
+            <cite>First name, location</cite>
+          </blockquote>
+          -->
+
+          <a href="#mbm-dl" class="mdl-offer__decline">No thanks, I'll just take my map</a>
         </div>
 
       </div>
@@ -230,23 +405,6 @@
   </section>
 
   <!-- ================================================
-       OFFER
-       ================================================ -->
-  <section class="section">
-    <div class="container">
-      <div class="mdl-offer reveal">
-        <span class="section__label">When You're Ready to Do Something With It</span>
-        <h2>Heal Yourself with EFT</h2>
-        <p>
-          Your body is already trying to heal. What gets in the way is tension, because a body braced against stress puts its resources into holding on instead of into repair. This is thirty days of getting out of its way, one guided session at a time.
-        </p>
-        <p class="mdl-offer__price">$197 &middot; or 3 payments of $90 &middot; self-paced</p>
-        <a id="mbm-offer" href="https://healyourselfeft.com/" class="btn btn--outline-navy">Have a look &rarr;</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================
        FOOTER
        ================================================ -->
   <footer class="site-footer">
@@ -273,8 +431,8 @@
     var dl = document.getElementById('mbm-dl');
     if (dl) { dl.addEventListener('click', function () { ev('file_download'); }); }
 
-    var offer = document.getElementById('mbm-offer');
-    if (offer) { offer.addEventListener('click', function () { ev('offer_click', { offer: 'heal_yourself_197' }); }); }
+    var offer = document.getElementById('mbm-anxiety-offer');
+    if (offer) { offer.addEventListener('click', function () { ev('click_anxiety_offer', { offer: 'anxiety_class_9' }); }); }
   })();
   </script>
 </body>
