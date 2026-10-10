@@ -53,20 +53,21 @@
 
     .mdl-confirm {
       display: flex;
-      align-items: flex-start;
-      gap: 12px;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.14);
       border-radius: 12px;
-      padding: 18px 20px;
-      max-width: 480px;
-      margin: 0 auto 1.75rem;
-      text-align: left;
+      padding: 26px 28px;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      text-align: center;
     }
 
-    .mdl-confirm__icon { font-size: 1.4rem; line-height: 1; flex-shrink: 0; }
+    .mdl-confirm__icon { font-size: 2rem; line-height: 1; flex-shrink: 0; }
 
-    .mdl-confirm p { color: var(--blue-50); font-size: 0.95rem; line-height: 1.6; margin: 0; }
+    .mdl-confirm p { color: var(--blue-50); font-size: 1.05rem; line-height: 1.65; margin: 0; }
 
     .mdl-stat {
       font-weight: 700;
@@ -170,18 +171,12 @@
     <div class="container">
       <div class="mdl-hero__inner">
 
-        <h1 class="mbm-hero__title">Your 100 Mind Body Map</h1>
-
-        <p class="mbm-hero__subtitle">
-          Look up what your body is doing, and see what tends to sit underneath it. Save this one. Most people come back to it more than once.
-        </p>
-
-        <img src="images/mind body map.png" alt="The 100 Mind-Body Map — preview" class="mdl-hero__img" />
-
         <div class="mdl-confirm">
           <span class="mdl-confirm__icon">🎉</span>
           <p>Congrats! It's being sent to your email inbox right now — be sure to check your inbox to make sure you got it. You can also download the map by clicking the button below.</p>
         </div>
+
+        <img src="images/mind body map.png" alt="The 100 Mind-Body Map — preview" class="mdl-hero__img" />
 
         <div class="mdl-download">
           <div class="payment-plan-wrap">
