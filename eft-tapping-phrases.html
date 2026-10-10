@@ -92,8 +92,69 @@
       background: var(--warm-gold);
     }
 
-    /* First of two stacked hero paragraphs, so it sits closer to the second */
-    .mbm-hero__desc--lead { margin-bottom: 0.9rem; }
+    /* Hero bullets. Faster to scan than the paragraph they replaced. */
+    .mbm-hero__list {
+      list-style: none;
+      margin: 0 0 1.85rem;
+      padding: 0;
+    }
+
+    .mbm-hero__list li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 11px;
+      color: var(--blue-50);
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+
+    .mbm-hero__list li::before {
+      content: "✓";
+      position: absolute;
+      left: 2px;
+      top: 0;
+      color: var(--warm-amber);
+      font-weight: 700;
+    }
+
+    /* The sell, moved below the form so the top of the page stays light */
+    .mbm-hero__after {
+      color: var(--blue-100);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin: 1.3rem 0 0;
+      text-align: center;
+    }
+
+    /* Proof. White cards on the navy, directly under the opt-in. */
+    .mbm-proof {
+      display: grid;
+      gap: 22px;
+      max-width: 900px;
+      margin: 3.25rem auto 0;
+    }
+
+    @media (min-width: 768px) {
+      .mbm-proof { grid-template-columns: 1fr 1fr; }
+    }
+
+    @keyframes mbm-star-pop {
+      0%   { transform: scale(0.5);  opacity: 0; }
+      60%  { transform: scale(1.18); opacity: 1; }
+      100% { transform: scale(1);    opacity: 1; }
+    }
+
+    .mbm-proof .testimonial-card__stars { display: inline-block; }
+
+    /* .revealed is added by the IntersectionObserver in main.js, so the
+       stars land just after the card itself has faded in. */
+    .mbm-proof .testimonial-card.revealed .testimonial-card__stars {
+      animation: mbm-star-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s both;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .mbm-proof .testimonial-card.revealed .testimonial-card__stars { animation: none; }
+    }
 
     /* No site header on this page, so the hero has nothing to clear */
     .mbm-hero { padding-top: 56px; }
@@ -139,16 +200,15 @@
           <h1 class="mbm-hero__title">The 28 Best <em>EFT Tapping</em> Phrases</h1>
 
           <p class="mbm-hero__subtitle">
-            The exact words to say while you tap, for anxiety, anger, grief, pain, cravings and the days you cannot name what you are feeling.
+            The exact words to say while you tap, for anxiety, anger, grief, pain and cravings.
           </p>
 
-          <p class="mbm-hero__desc mbm-hero__desc--lead">
-            Most people stall at the same place. They know where to tap. They freeze on what to say.
-          </p>
-
-          <p class="mbm-hero__desc">
-            These 28 are the simplest phrases I use, and the ones that land hardest. Short enough to remember. Direct enough to say out loud. Broad enough that one phrase works on anxiety, anger, pain or a craving. They do the same job every time, so you are never hunting for the right words while you are already upset. These are the ones I come back to again and again.
-          </p>
+          <ul class="mbm-hero__list">
+            <li>Simple enough to remember after one read</li>
+            <li>Direct enough to say out loud without feeling silly</li>
+            <li>One phrase covers anxiety, anger, pain or a craving</li>
+            <li>Works the same way every time you reach for it</li>
+          </ul>
 
           <img src="images/tapping-phrases-cover.jpg" alt="The 28 Powerful EFT Statements guide, cover and inside spread" class="mbm-hero__img mbm-hero__img--mobile" width="840" height="630" decoding="async" fetchpriority="high" />
 
@@ -177,12 +237,39 @@
 
             <p class="mbm-form-card__privacy">No spam, ever. Unsubscribe anytime.</p>
           </div>
+
+          <p class="mbm-hero__after">
+            Most people know where to tap. They freeze on what to say. These are the 28 I come back to again and again.
+          </p>
         </div>
 
         <div class="mbm-hero__image">
           <img src="images/tapping-phrases-cover.jpg" alt="The 28 Powerful EFT Statements guide, cover and inside spread" class="mbm-hero__img" width="840" height="630" decoding="async" fetchpriority="high" />
         </div>
 
+      </div>
+
+      <!-- ================================================
+           PROOF
+           ================================================ -->
+      <div class="mbm-proof">
+        <div class="testimonial-card reveal delay-1">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__quote">
+            "Thanks Michael! I was suffering from pain and irritation for more than 5 days. After just one EFT session it's been more than 12 hours that I'm feeling so relaxed! I cannot believe how quickly this worked."
+          </p>
+          <div class="testimonial-card__author">Amit Singh</div>
+          <div class="testimonial-card__location">India</div>
+        </div>
+
+        <div class="testimonial-card reveal delay-2">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__quote">
+            "My digestive problems have lessened; and in times when I feel deeply triggered in a PTSD fog, I can get myself out of it and be back to the present time. EFT has become an essential tool in my daily life."
+          </p>
+          <div class="testimonial-card__author">Paula West, M.D.</div>
+          <div class="testimonial-card__location">Medical Doctor, USA</div>
+        </div>
       </div>
     </div>
   </section>
