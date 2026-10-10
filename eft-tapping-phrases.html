@@ -92,6 +92,13 @@
       background: var(--warm-gold);
     }
 
+    /* No site header on this page, so the hero has nothing to clear */
+    .mbm-hero { padding-top: 56px; }
+
+    @media (max-width: 600px) {
+      .mbm-hero { padding-top: 40px; }
+    }
+
     /* The base h2 carries no bottom margin, so this heading sat on its text */
     .mbm-story h2 { margin-bottom: 1.4rem; }
 
@@ -111,18 +118,6 @@
   </style>
 </head>
 <body>
-
-  <!-- ================================================
-       HEADER
-       ================================================ -->
-  <header class="site-header">
-    <div class="container">
-      <a href="index.html" class="site-logo">
-        <span class="site-logo__main">Heal Yourself with EFT</span>
-        <span class="site-logo__sub">with Michael Hetherington</span>
-      </a>
-    </div>
-  </header>
 
   <!-- ================================================
        HERO / OPT-IN
@@ -148,7 +143,7 @@
             Most people stall at the same place. They know where to tap. They freeze on what to say. These are the 28 phrases I come back to most.
           </p>
 
-          <img src="images/tapping-phrases-cover.jpg" alt="The 28 Powerful EFT Statements guide, cover and inside spread" class="mbm-hero__img mbm-hero__img--mobile" width="396" height="284" decoding="async" fetchpriority="high" />
+          <img src="images/tapping-phrases-cover.jpg" alt="The 28 Powerful EFT Statements guide, cover and inside spread" class="mbm-hero__img mbm-hero__img--mobile" width="840" height="630" decoding="async" fetchpriority="high" />
 
           <div class="mbm-form-card" id="optin">
             <!-- ================================================
@@ -178,7 +173,7 @@
         </div>
 
         <div class="mbm-hero__image">
-          <img src="images/tapping-phrases-cover.jpg" alt="The 28 Powerful EFT Statements guide, cover and inside spread" class="mbm-hero__img" width="396" height="284" decoding="async" fetchpriority="high" />
+          <img src="images/tapping-phrases-cover.jpg" alt="The 28 Powerful EFT Statements guide, cover and inside spread" class="mbm-hero__img" width="840" height="630" decoding="async" fetchpriority="high" />
         </div>
 
       </div>
