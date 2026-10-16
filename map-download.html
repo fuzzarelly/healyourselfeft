@@ -120,7 +120,7 @@
       margin: 0 0 14px;
     }
 
-    /* Words rise in one after another, then an amber underline sweeps under the line */
+    /* Words rise in one after another; the "how to stop it" half is in amber */
     .mdl-hook__word {
       display: inline-block;
       opacity: 0;
@@ -138,22 +138,10 @@
     .mdl-hook__word:nth-child(9) { animation-delay: 1.25s; }
     .mdl-hook__word:nth-child(10) { animation-delay: 1.35s; }
 
-    .mdl-hook__line {
-      background-image: linear-gradient(var(--warm-amber), var(--warm-amber));
-      background-repeat: no-repeat;
-      background-position: 0 95%;
-      background-size: 0% 0.08em;
-      -webkit-box-decoration-break: clone;
-      box-decoration-break: clone;
-      animation: mdl-underline 1.1s ease-out 1.9s forwards;
-    }
+    .mdl-hook__word--fix { color: var(--warm-amber); }
 
     @keyframes mdl-word-in {
       to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes mdl-underline {
-      to { background-size: 100% 0.08em; }
     }
 
     .mdl-hook__cue {
@@ -178,10 +166,8 @@
     @media (prefers-reduced-motion: reduce) {
       .mdl-hook__cue span,
       .mdl-hook__word,
-      .mdl-hook__line,
       .mdl-offer__urgency { animation: none; }
       .mdl-hook__word { opacity: 1; transform: none; }
-      .mdl-hook__line { background-size: 100% 0.08em; }
     }
 
     /* ---- Anxiety class offer, sits inside the dark hero below the hook ---- */
@@ -508,7 +494,7 @@
              SCROLL HOOK, kept out of .reveal so its own entrance animation runs on load
              ================================================ -->
         <div class="mdl-hook">
-          <h2 class="mdl-hook__title"><span class="mdl-hook__line"><span class="mdl-hook__word">Why</span> <span class="mdl-hook__word">Your</span> <span class="mdl-hook__word">Anxiety</span> <span class="mdl-hook__word">Keeps</span> <span class="mdl-hook__word">Coming Back</span> <span class="mdl-hook__word">(And</span> <span class="mdl-hook__word">How</span> <span class="mdl-hook__word">to</span> <span class="mdl-hook__word">Stop</span> <span class="mdl-hook__word">It)</span></span></h2>
+          <h2 class="mdl-hook__title"><span class="mdl-hook__word">Why</span> <span class="mdl-hook__word">Your</span> <span class="mdl-hook__word">Anxiety</span> <span class="mdl-hook__word">Keeps</span> <span class="mdl-hook__word">Coming Back</span> <span class="mdl-hook__word mdl-hook__word--fix">(And</span> <span class="mdl-hook__word mdl-hook__word--fix">How</span> <span class="mdl-hook__word mdl-hook__word--fix">to</span> <span class="mdl-hook__word mdl-hook__word--fix">Stop</span> <span class="mdl-hook__word mdl-hook__word--fix">It)</span></h2>
           <p class="mdl-hook__cue">Read this before you close the page <span aria-hidden="true">&darr;</span></p>
         </div>
 
