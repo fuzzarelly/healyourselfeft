@@ -82,6 +82,16 @@
     .mdl-download .payment-plan-wrap { max-width: 460px; }
     .mdl-download .payment-plan-card { padding: 26px 26px; }
 
+    /* Product shot so it is obvious what the button downloads */
+    .mdl-product {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      margin: 0 auto 18px;
+      border-radius: 8px;
+    }
+
     /* ---- Scroll hook headline, sits on the navy straight under the confirm box ---- */
     .mdl-hook {
       max-width: 660px;
@@ -201,7 +211,7 @@
       margin-bottom: 18px;
     }
 
-    .mdl-offer__sub {
+    .mdl-offer p.mdl-offer__sub {
       font-family: var(--font-heading);
       font-size: 1.8rem;
       font-weight: 700;
@@ -443,7 +453,7 @@
     @media (max-width: 600px) {
       .mdl-offer { margin-top: 1.25rem; }
       .mdl-offer__body { padding: 26px 22px; }
-      .mdl-offer__sub { font-size: 1.4rem; }
+      .mdl-offer p.mdl-offer__sub { font-size: 1.4rem; }
       .mdl-offer__pull { font-size: 1.1rem; }
       .mdl-offer p, .mdl-offer__list li, .mdl-offer__kicker { font-size: 0.95rem; }
       .mdl-offer__teacher { font-size: 0.84rem; }
@@ -551,6 +561,8 @@
         <div class="mdl-download">
           <div class="payment-plan-wrap">
             <div class="payment-plan-card">
+              <img src="images/tapping-phrases-cover.jpg" srcset="images/tapping-phrases-cover-520.jpg 520w, images/tapping-phrases-cover.jpg 840w" sizes="300px" alt="The 28 Powerful EFT Statements guide" class="mdl-product" width="840" height="630" decoding="async" loading="lazy" />
+
               <!-- This link changes if the PDF moves off Google Drive. -->
               <a id="mbm-dl" href="https://drive.google.com/uc?export=download&amp;id=1peTJWWdiJtStds_J3efS3rMZq5NXRIJG" target="_blank" rel="noopener" class="btn btn--primary btn--lg btn--full">Click Here to Download the 28 EFT Phrases</a>
 

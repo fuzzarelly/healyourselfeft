@@ -90,6 +90,16 @@
     /* ---- Download card, trimmed down so the hook headline sits higher ---- */
     .mdl-download .payment-plan-wrap { max-width: 460px; }
     .mdl-download .payment-plan-card { padding: 26px 26px; }
+
+    /* Product shot so it is obvious what the button downloads */
+    .mdl-product {
+      display: block;
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      margin: 0 auto 18px;
+      border-radius: 8px;
+    }
     .mdl-download .mdl-stat { margin-bottom: 1.1rem; }
 
     /* ---- Scroll hook headline, sits on the navy straight under the confirm box ---- */
@@ -211,7 +221,7 @@
       margin-bottom: 18px;
     }
 
-    .mdl-offer__sub {
+    .mdl-offer p.mdl-offer__sub {
       font-family: var(--font-heading);
       font-size: 2.1rem;
       font-weight: 700;
@@ -453,7 +463,7 @@
     @media (max-width: 600px) {
       .mdl-offer { margin-top: 1.25rem; }
       .mdl-offer__body { padding: 26px 22px; }
-      .mdl-offer__sub { font-size: 1.6rem; }
+      .mdl-offer p.mdl-offer__sub { font-size: 1.6rem; }
       .mdl-offer__pull { font-size: 1.1rem; }
       .mdl-offer p, .mdl-offer__list li, .mdl-offer__kicker { font-size: 0.95rem; }
       .mdl-offer__teacher { font-size: 0.84rem; }
@@ -561,6 +571,8 @@
         <div class="mdl-download">
           <div class="payment-plan-wrap">
             <div class="payment-plan-card">
+              <img src="images/mind-body-map-cover.jpg" alt="The 100 Mind-Body Map" class="mdl-product" width="840" height="840" decoding="async" loading="lazy" />
+
               <p class="mdl-stat">115 conditions &middot; 16 body systems</p>
 
               <!-- This link changes if the PDF moves off Google Drive. -->
