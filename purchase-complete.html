@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank you — your order is confirmed</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6HFTYSBJ0B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    try {
+      gtag('js', new Date());
+      gtag('config', 'G-6HFTYSBJ0B', {
+        linker: { domains: [
+          'michaelhetherington.com','www.michaelhetherington.com',
+          'healyourselfeft.com','healyourdigestioneft.com',
+          'eftpractitionertraining.com',
+          'mindbodymedicineacademy.onlinecoursehost.com'
+        ] }
+      });
+      gtag('config', 'AW-1016615342');
+    } catch (e) {}
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=4" />
+
+  <style>
+    /* A calm check mark in place of the bouncing emoji the opt-in thank-you page uses */
+    .pc-check {
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      border: 2px solid var(--warm-amber);
+      color: var(--warm-amber);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pc-check svg { width: 34px; height: 34px; }
+
+    .ty-step a { color: var(--blue-200); text-decoration: underline; }
+    .ty-step a:hover { color: var(--white); }
+
+    .pc-encourage {
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: 1.15rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================================================
+       HEADER
+       ================================================ -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-logo">
+        <span class="site-logo__main">Heal Yourself with EFT</span>
+        <span class="site-logo__sub">with Michael Hetherington</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ================================================
+       ORDER CONFIRMED
+       ================================================ -->
+  <main class="ty-hero">
+    <div class="container">
+      <div class="ty-inner">
+
+        <div class="pc-check" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+
+        <h1>Your order is confirmed</h1>
+
+        <p>
+          Thank you. Your payment went through, and a receipt is on its way to you from Stripe.
+        </p>
+
+        <div class="ty-steps">
+          <h3>What happens next:</h3>
+
+          <div class="ty-step">
+            <div class="ty-step__num">1</div>
+            <div>
+              <strong style="color: var(--white);">Watch for your access details</strong><br>
+              They'll arrive by email within a few minutes, sent to the address you used at checkout. Enrolment is handled by hand, so please allow up to 24 hours.
+            </div>
+          </div>
+
+          <div class="ty-step">
+            <div class="ty-step__num">2</div>
+            <div>
+              <strong style="color: var(--white);">Check your spam and promotions folders</strong><br>
+              If you can't see it, it may have landed there. Add <a href="mailto:info@michaelhetherington.com">info@michaelhetherington.com</a> to your contacts so nothing goes astray.
+            </div>
+          </div>
+
+          <div class="ty-step">
+            <div class="ty-step__num">3</div>
+            <div>
+              <strong style="color: var(--white);">Need a hand?</strong><br>
+              If anything goes wrong, just reply to the email or write to <a href="mailto:info@michaelhetherington.com">info@michaelhetherington.com</a>.
+            </div>
+          </div>
+        </div>
+
+        <p class="pc-encourage">You've taken the first step, and that's often the hardest one.</p>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ================================================
+       FOOTER
+       ================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-logo">Heal Yourself with EFT</p>
+      <p class="footer-tagline">with Michael Hetherington | Made with Love</p>
+
+      <p class="footer-copy">&copy; 2026 Michael Hetherington | healyourselfeft.com</p>
+
+      <p class="footer-disclaimer">
+        EFT Tapping is considered a complementary therapy and is not a replacement for medical or psychological treatment.
+        Results may vary. Always consult a qualified healthcare professional for serious medical conditions.
+      </p>
+    </div>
+  </footer>
+
+<script>
+(function () {
+  try {
+    var q = new URLSearchParams(window.location.search);
+    var products = {
+      hy197: { name: 'Heal Yourself with EFT',                    value: 197 },
+      hy90:  { name: 'Heal Yourself with EFT - payment plan',     value: 90  },
+      hd197: { name: 'Heal Your Digestion',                       value: 197 },
+      hd90:  { name: 'Heal Your Digestion - payment plan',        value: 90  },
+      pt497: { name: 'EFT Practitioner Training',                 value: 497 },
+      pt200: { name: 'EFT Practitioner Training - payment plan',  value: 200 },
+      anx9:  { name: 'Anxiety Class',                             value: 9   }
+    };
+    var p = products[q.get('p')];
+    if (p && typeof gtag === 'function') {
+      gtag('event', 'purchase', {
+        transaction_id: q.get('session_id') || ('na-' + Date.now()),
+        value: p.value,
+        currency: 'USD',
+        items: [{ item_name: p.name, price: p.value, quantity: 1 }]
+      });
+    }
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
