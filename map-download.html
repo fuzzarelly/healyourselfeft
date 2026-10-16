@@ -337,7 +337,7 @@
       margin: 20px 0 0;
     }
 
-    /* Styling is ready for a real review. See the commented block in the markup. */
+    /* Student review, placed right before the price so the proof lands at the decision point */
     .mdl-offer__quote {
       margin: 26px 0 0;
       padding: 20px 22px;
@@ -355,6 +355,14 @@
       color: var(--offer-navy);
       margin: 0 0 8px;
       text-align: left;
+    }
+
+    .mdl-offer__stars {
+      color: var(--warm-amber);
+      font-size: 1.05rem;
+      letter-spacing: 0.12em;
+      line-height: 1;
+      margin-bottom: 10px;
     }
 
     .mdl-offer__quote cite {
@@ -539,13 +547,11 @@
             <!-- Workbook image goes here when you have it:
             <img src="images/anxiety-class-workbook.png" alt="The anxiety class workbook" class="mdl-offer__img" /> -->
 
-            <!-- REVIEW. Paste a real one from a student and delete this comment wrapper.
-                 Styling is already done, so it will look right as soon as it is uncommented.
             <blockquote class="mdl-offer__quote">
-              <p>Their words here.</p>
-              <cite>First name, location</cite>
+              <div class="mdl-offer__stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>&ldquo;This class was absolutely awe inspiring, I feel sooo relaxed right now and am so pleased I decided to do it.&rdquo;</p>
+              <cite>Rachel Stevens</cite>
             </blockquote>
-            -->
 
             <div class="mdl-offer__pricing">
               <p class="mdl-offer__urgency">This page only! Once you close this, this discounted price is gone.</p>
