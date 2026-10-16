@@ -39,7 +39,7 @@
     @media (max-width: 600px) { .mbm-hero { padding-top: 75px; } }
 
     .mdl-hero__inner { max-width: 740px; margin: 0 auto; text-align: center; }
-    .mdl-download { margin-top: 2rem; }
+    .mdl-download { margin-top: 2.5rem; }
 
     .mdl-confirm {
       display: flex;
@@ -58,6 +58,7 @@
     .mdl-confirm__icon { font-size: 2rem; line-height: 1; flex-shrink: 0; }
 
     .mdl-confirm p { color: var(--blue-50); font-size: 1.05rem; line-height: 1.65; margin: 0; }
+    .mdl-confirm strong { display: block; color: var(--white); font-weight: 700; }
 
     .mdl-note {
       font-size: 0.82rem;
@@ -81,10 +82,10 @@
     .mdl-download .payment-plan-wrap { max-width: 460px; }
     .mdl-download .payment-plan-card { padding: 26px 26px; }
 
-    /* ---- Scroll hook headline, sits on the navy straight under the download card ---- */
+    /* ---- Scroll hook headline, sits on the navy straight under the confirm box ---- */
     .mdl-hook {
       max-width: 660px;
-      margin: 2.25rem auto 0;
+      margin: 0.5rem auto 0;
       text-align: center;
     }
 
@@ -97,6 +98,37 @@
       letter-spacing: -0.01em;
       color: var(--white);
       margin: 0 0 14px;
+    }
+
+    /* Words rise in one after another, then an amber underline sweeps under the line */
+    .mdl-hook__word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(0.45em);
+      animation: mdl-word-in 0.7s cubic-bezier(.2,.7,.2,1) forwards;
+    }
+    .mdl-hook__word:nth-child(1) { animation-delay: 0.15s; }
+    .mdl-hook__word:nth-child(2) { animation-delay: 0.3s; }
+    .mdl-hook__word:nth-child(3) { animation-delay: 0.45s; }
+    .mdl-hook__word:nth-child(4) { animation-delay: 0.6s; }
+    .mdl-hook__word:nth-child(5) { animation-delay: 0.75s; }
+
+    .mdl-hook__line {
+      background-image: linear-gradient(var(--warm-amber), var(--warm-amber));
+      background-repeat: no-repeat;
+      background-position: 0 95%;
+      background-size: 0% 0.08em;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+      animation: mdl-underline 0.9s ease-out 1.3s forwards;
+    }
+
+    @keyframes mdl-word-in {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes mdl-underline {
+      to { background-size: 100% 0.08em; }
     }
 
     .mdl-hook__cue {
@@ -120,7 +152,11 @@
 
     @media (prefers-reduced-motion: reduce) {
       .mdl-hook__cue span,
+      .mdl-hook__word,
+      .mdl-hook__line,
       .mdl-offer__urgency { animation: none; }
+      .mdl-hook__word { opacity: 1; transform: none; }
+      .mdl-hook__line { background-size: 100% 0.08em; }
     }
 
     /* ---- Anxiety class offer, sits inside the dark hero below the hook ---- */
@@ -167,11 +203,12 @@
 
     .mdl-offer__sub {
       font-family: var(--font-heading);
-      font-size: 1.45rem;
-      font-weight: 600;
-      line-height: 1.35;
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
       color: var(--offer-navy);
-      margin: 0 0 20px;
+      margin: 0 0 22px;
     }
 
     .mdl-offer p {
@@ -336,7 +373,7 @@
       animation: mdl-urgent 2.4s ease-in-out infinite;
     }
 
-    /* Deliberately lighter than the gold Download button above it. */
+    /* Deliberately lighter than the gold Download button below it. */
     .mdl-offer__btn {
       display: block;
       background: var(--offer-terracotta);
@@ -404,10 +441,9 @@
     #mbm-dl { scroll-margin-top: 120px; }
 
     @media (max-width: 600px) {
-      .mdl-hook { margin-top: 1.9rem; }
       .mdl-offer { margin-top: 1.25rem; }
       .mdl-offer__body { padding: 26px 22px; }
-      .mdl-offer__sub { font-size: 1.2rem; }
+      .mdl-offer__sub { font-size: 1.4rem; }
       .mdl-offer__pull { font-size: 1.1rem; }
       .mdl-offer p, .mdl-offer__list li, .mdl-offer__kicker { font-size: 0.95rem; }
       .mdl-offer__teacher { font-size: 0.84rem; }
@@ -439,25 +475,14 @@
 
         <div class="mdl-confirm">
           <span class="mdl-confirm__icon">🎉</span>
-          <p>You're in. Your phrases are on their way to your inbox. You can also download them right now below.</p>
-        </div>
-
-        <div class="mdl-download">
-          <div class="payment-plan-wrap">
-            <div class="payment-plan-card">
-              <!-- This link changes if the PDF moves off Google Drive. -->
-              <a id="mbm-dl" href="https://drive.google.com/uc?export=download&amp;id=1peTJWWdiJtStds_J3efS3rMZq5NXRIJG" target="_blank" rel="noopener" class="btn btn--primary btn--lg btn--full">Click Here to Download the 28 EFT Phrases</a>
-
-              <p class="mdl-note">It opens in a new tab. Check your downloads folder if you don't see it.</p>
-            </div>
-          </div>
+          <p><strong>Congrats! Your phrases are on their way to your inbox.</strong> You can also download them right now below.</p>
         </div>
 
         <!-- ================================================
-             SCROLL HOOK, kept out of .reveal so it is painted immediately
+             SCROLL HOOK, kept out of .reveal so its own entrance animation runs on load
              ================================================ -->
         <div class="mdl-hook">
-          <h2 class="mdl-hook__title">Why Your Anxiety Keeps Coming Back</h2>
+          <h2 class="mdl-hook__title"><span class="mdl-hook__line"><span class="mdl-hook__word">Why</span> <span class="mdl-hook__word">Your</span> <span class="mdl-hook__word">Anxiety</span> <span class="mdl-hook__word">Keeps</span> <span class="mdl-hook__word">Coming Back</span></span></h2>
           <p class="mdl-hook__cue">Read this before you close the page <span aria-hidden="true">&darr;</span></p>
         </div>
 
@@ -471,7 +496,7 @@
           <div class="mdl-offer__body">
             <span class="mdl-offer__flag">Only on this page</span>
 
-            <p class="mdl-offer__sub">You have the words. This class shows you how to use them to clear anxiety for good.</p>
+            <p class="mdl-offer__sub">You have the words. This class shows you how to use them to clear anxiety at the root, in under 90 minutes.</p>
 
             <p>If your anxiety keeps coming back no matter what you try, <strong>it's not because you're doing something wrong.</strong> Your nervous system is still carrying everything it hasn't had the chance to process.</p>
 
@@ -520,6 +545,17 @@
             </div>
 
             <a href="#mbm-dl" class="mdl-offer__decline">No thanks, I'll just take my phrases</a>
+          </div>
+        </div>
+
+        <div class="mdl-download">
+          <div class="payment-plan-wrap">
+            <div class="payment-plan-card">
+              <!-- This link changes if the PDF moves off Google Drive. -->
+              <a id="mbm-dl" href="https://drive.google.com/uc?export=download&amp;id=1peTJWWdiJtStds_J3efS3rMZq5NXRIJG" target="_blank" rel="noopener" class="btn btn--primary btn--lg btn--full">Click Here to Download the 28 EFT Phrases</a>
+
+              <p class="mdl-note">It opens in a new tab. Check your downloads folder if you don't see it.</p>
+            </div>
           </div>
         </div>
 
