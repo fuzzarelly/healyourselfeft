@@ -115,8 +115,8 @@
           <div class="ty-step">
             <div class="ty-step__num">1</div>
             <div>
-              <strong style="color: var(--white);">Watch for your access details</strong><br>
-              They'll arrive by email within a few minutes, sent to the address you used at checkout. Enrolment is handled by hand, so please allow up to 24 hours.
+              <strong style="color: var(--white);" id="pc-step1-title">Watch for your access details</strong><br>
+              <span id="pc-step1-text">They'll arrive by email within a few minutes, sent to the address you used at checkout. Enrolment is handled by hand, so please allow up to 24 hours.</span>
             </div>
           </div>
 
@@ -170,7 +170,9 @@
         title:  'Your class is ready',
         text:   'Your class is available now. The link is also in your email.',
         button: 'Watch the class',
-        url:    'https://www.michaelhetherington.com/eft-anxiety-class'
+        url:    'https://www.michaelhetherington.com/eft-anxiety-class',
+        step1:  ['Keep your class link handy',
+                 "We've also emailed it to the address you used at checkout, so you can come back to the class any time."]
       }
     };
     var a = access[new URLSearchParams(window.location.search).get('p')];
@@ -181,6 +183,10 @@
     btn.textContent = a.button;
     btn.href = a.url;
     document.getElementById('pc-access').hidden = false;
+    if (a.step1) {
+      document.getElementById('pc-step1-title').textContent = a.step1[0];
+      document.getElementById('pc-step1-text').textContent = a.step1[1];
+    }
   } catch (e) {}
 })();
 </script>
