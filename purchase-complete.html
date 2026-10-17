@@ -88,7 +88,7 @@
         <h1>Your order is confirmed</h1>
 
         <p>
-          Thank you. Your payment went through, and a receipt is on its way to you from Stripe.
+          Thank you. Your payment went through, and a receipt is on its way to your inbox.
         </p>
 
         <div class="ty-steps">
@@ -155,10 +155,21 @@
       pt200: { name: 'EFT Practitioner Training - payment plan',  value: 200 },
       anx9:  { name: 'Anxiety Class',                             value: 9   }
     };
-    var p = products[q.get('p')];
+    var code = q.get('p');
+    var p = products[code];
     if (p && typeof gtag === 'function') {
+      // Zylvie sends buyers here twice (checkout redirect, then the follow-up
+      // email) and passes no order ID, so remember the sale per browser and
+      // only count it once. Stripe's session_id still makes each sale unique.
+      var key = 'purchase_' + code;
+      var seen = null;
+      try { seen = localStorage.getItem(key); } catch (e) {}
+      var tid = q.get('session_id');
+      if (tid ? seen === tid : seen) { return; }
+      tid = tid || ('na-' + Date.now());
+      try { localStorage.setItem(key, tid); } catch (e) {}
       gtag('event', 'purchase', {
-        transaction_id: q.get('session_id') || ('na-' + Date.now()),
+        transaction_id: tid,
         value: p.value,
         currency: 'USD',
         items: [{ item_name: p.name, price: p.value, quantity: 1 }]
