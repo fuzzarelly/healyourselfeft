@@ -53,6 +53,18 @@
     .ty-step a { color: var(--blue-200); text-decoration: underline; }
     .ty-step a:hover { color: var(--white); }
 
+    /* Shown only for products buyers can open straight away (see the access map below) */
+    .pc-access {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--warm-amber);
+      border-radius: 14px;
+      padding: 28px 24px;
+      margin-bottom: 2rem;
+    }
+
+    .pc-access h2 { color: var(--white); font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .pc-access p { color: var(--blue-100); margin-bottom: 1.25rem; }
+
     .pc-encourage {
       font-family: var(--font-heading);
       font-style: italic;
@@ -91,14 +103,20 @@
           Thank you. Your payment went through, and a receipt is on its way to your inbox.
         </p>
 
+        <div class="pc-access" id="pc-access" hidden>
+          <h2 id="pc-access-title"></h2>
+          <p id="pc-access-text"></p>
+          <a id="pc-access-btn" class="btn btn--primary btn--lg" href="#"></a>
+        </div>
+
         <div class="ty-steps">
           <h3>What happens next:</h3>
 
           <div class="ty-step">
             <div class="ty-step__num">1</div>
             <div>
-              <strong style="color: var(--white);">Watch for your access details</strong><br>
-              They'll arrive by email within a few minutes, sent to the address you used at checkout. Enrolment is handled by hand, so please allow up to 24 hours.
+              <strong style="color: var(--white);" id="pc-step1-title">Watch for your access details</strong><br>
+              <span id="pc-step1-text">They'll arrive by email within a few minutes, sent to the address you used at checkout. Enrolment is handled by hand, so please allow up to 24 hours.</span>
             </div>
           </div>
 
@@ -142,6 +160,36 @@
     </div>
   </footer>
 
+<script>
+// Products the buyer can open straight away. Add a product code here to give
+// its buyers a button to their purchase; every other code shows the page as-is.
+(function () {
+  try {
+    var access = {
+      anx9: {
+        title:  'Your class is ready',
+        text:   'Your class is available now. The link is also in your email.',
+        button: 'Watch the class',
+        url:    'https://www.michaelhetherington.com/eft-anxiety-class',
+        step1:  ['Keep your class link handy',
+                 "We've also emailed it to the address you used at checkout, so you can come back to the class any time."]
+      }
+    };
+    var a = access[new URLSearchParams(window.location.search).get('p')];
+    if (!a) { return; }
+    document.getElementById('pc-access-title').textContent = a.title;
+    document.getElementById('pc-access-text').textContent = a.text;
+    var btn = document.getElementById('pc-access-btn');
+    btn.textContent = a.button;
+    btn.href = a.url;
+    document.getElementById('pc-access').hidden = false;
+    if (a.step1) {
+      document.getElementById('pc-step1-title').textContent = a.step1[0];
+      document.getElementById('pc-step1-text').textContent = a.step1[1];
+    }
+  } catch (e) {}
+})();
+</script>
 <script>
 (function () {
   try {
