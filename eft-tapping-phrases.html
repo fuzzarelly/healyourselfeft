@@ -26,363 +26,201 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
-  <!-- Fonts & Icons -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=4" />
-
-  <style>
-    /* Author block in the "why I made this" section. Page local, so it cannot
-       disturb the dark bio section on the home page, which uses .bio-* classes. */
-    .mbm-author {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-      max-width: 540px;
-      margin: 2.75rem auto 0;
-      padding-top: 2rem;
-      border-top: 1px solid var(--cream-dark);
-      text-align: left;
-    }
-
-    .mbm-author__photo {
-      width: 140px;
-      height: 140px;
-      flex-shrink: 0;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center top;
-      background: var(--cream);
-      box-shadow: var(--shadow-md);
-    }
-
-    /* Two classes deep, otherwise .mbm-story p wins on specificity */
-    .mbm-author .mbm-author__name {
-      font-family: var(--font-heading);
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--navy-700);
-      margin: 0 0 10px;
-    }
-
-    .mbm-author__creds {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .mbm-author__creds li {
-      position: relative;
-      padding-left: 20px;
-      margin-bottom: 6px;
-      font-size: 0.92rem;
-      line-height: 1.5;
-      color: var(--text-muted);
-    }
-
-    .mbm-author__creds li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.55em;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--warm-gold);
-    }
-
-    /* Hero bullets. Faster to scan than the paragraph they replaced. */
-    .mbm-hero__list {
-      list-style: none;
-      margin: 0 0 1.85rem;
-      padding: 0;
-    }
-
-    .mbm-hero__list li {
-      position: relative;
-      padding-left: 30px;
-      margin-bottom: 12px;
-      color: var(--blue-50);
-      font-size: 1rem;
-      line-height: 1.55;
-    }
-
-    /* Lead word of each bullet, so the five features read at a glance */
-    .mbm-hero__list strong {
-      color: var(--white);
-      font-weight: 700;
-    }
-
-    .mbm-hero__list li::before {
-      content: "✓";
-      position: absolute;
-      left: 2px;
-      top: 0;
-      color: var(--warm-amber);
-      font-weight: 700;
-    }
-
-    /* The sell, moved below the form so the top of the page stays light */
-    .mbm-hero__after {
-      color: var(--white);
-      font-size: 1.08rem;
-      line-height: 1.65;
-      margin: 1.4rem 0 0;
-      text-align: center;
-    }
-
-    /* The closing line carries the most weight, so it gets its own line */
-    .mbm-hero__after-line {
-      display: block;
-      margin-top: 0.65rem;
-    }
-
-    /* Proof. White cards on the navy, directly under the opt-in. */
-    .mbm-proof {
-      display: grid;
-      gap: 22px;
-      max-width: 900px;
-      margin: 3.25rem auto 0;
-    }
-
-    @media (min-width: 768px) {
-      .mbm-proof { grid-template-columns: 1fr 1fr; }
-    }
-
-    @keyframes mbm-star-pop {
-      0%   { transform: scale(0.5);  opacity: 0; }
-      60%  { transform: scale(1.18); opacity: 1; }
-      100% { transform: scale(1);    opacity: 1; }
-    }
-
-    .mbm-proof .testimonial-card__stars { display: inline-block; }
-
-    /* .revealed is added by the IntersectionObserver in main.js, so the
-       stars land just after the card itself has faded in. */
-    .mbm-proof .testimonial-card.revealed .testimonial-card__stars {
-      animation: mbm-star-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.25s both;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .mbm-proof .testimonial-card.revealed .testimonial-card__stars { animation: none; }
-    }
-
-    /* No site header on this page, so the hero has nothing to clear */
-    .mbm-hero { padding-top: 56px; }
-
-    @media (max-width: 600px) {
-      .mbm-hero { padding-top: 40px; }
-    }
-
-    /* The base h2 carries no bottom margin, so this heading sat on its text */
-    .mbm-story h2 { margin-bottom: 1.4rem; }
-
-    /* This paragraph is wrapped in .reveal, so the .final-cta > .container > p
-       rule in style.css misses it and it fell back to dark body text on navy */
-    .final-cta p { color: var(--white); }
-
-    @media (max-width: 560px) {
-      .mbm-author {
-        flex-direction: column;
-        text-align: center;
-        gap: 18px;
-      }
-      .mbm-author__photo { width: 120px; height: 120px; }
-      .mbm-author__creds { display: inline-block; text-align: left; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/ad-funnel.css?v=2" />
 </head>
 <body>
 
   <!-- ================================================
+       HEADER: wordmark only
+       ================================================ -->
+  <header class="af-header">
+    <div class="wrap">
+      <span class="af-wordmark">Heal Yourself with EFT</span>
+    </div>
+  </header>
+
+  <!-- ================================================
        HERO / OPT-IN
        ================================================ -->
-  <section class="mbm-hero">
-    <div class="mbm-hero__glow"></div>
-    <div class="container">
-      <div class="mbm-hero__inner">
+  <section class="af-navy op-hero" id="optin">
+    <div class="wrap op-hero__grid">
 
-        <div class="mbm-hero__copy">
-          <div class="hero__badge">
-            <span class="hero__badge-dot"></span>
-            Free Guide &mdash; Instant Download
-          </div>
+      <div class="op-hero__copy">
+        <span class="af-eyebrow">Free guide &middot; 28 phrases &middot; instant download</span>
+        <h1>You know where to tap. Here's <span class="af-hl">exactly what to say.</span></h1>
+        <p class="op-hero__sub">28 word-for-word phrases for anxiety, anger, grief, pain and cravings. Say them as written. Feel the shift.</p>
 
-          <h1 class="mbm-hero__title">The 28 Best <em>EFT Tapping</em> Phrases</h1>
+        <div class="af-card op-form">
+          <!-- ================================================
+               SENDFOX OPT-IN FORM
+               ================================================ -->
+          <form method="post" action="https://sendfox.com/form/m44x5n/m78exv" class="sendfox-form mbm-form" id="m78exv" data-async="true" data-recaptcha="true">
+            <div class="op-field">
+              <label for="sendfox_form_name">First name</label>
+              <input type="text" id="sendfox_form_name" placeholder="Your first name" name="first_name" autocomplete="given-name" required />
+            </div>
+            <div class="op-field">
+              <label for="sendfox_form_email">Email</label>
+              <input type="email" id="sendfox_form_email" placeholder="Your best email address" name="email" autocomplete="email" required />
+            </div>
+            <!-- no botz please -->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="a_password" tabindex="-1" value="" autocomplete="off" /></div>
+            <button type="submit" class="af-btn">Send Me the 28 Phrases</button>
+          </form>
 
-          <p class="mbm-hero__subtitle">
-            The exact words to say while you tap, for anxiety, anger, grief, pain and cravings.
-          </p>
-
-          <ul class="mbm-hero__list">
-            <li><strong>Clear.</strong> No guessing what to say next.</li>
-            <li><strong>Direct.</strong> Words that hit the spot.</li>
-            <li><strong>Easy to remember.</strong> Short enough to know by heart after one read.</li>
-            <li><strong>Works on almost anything.</strong> The same phrases adapt to anxiety, anger, grief, pain, cravings and more.</li>
-            <li><strong>They land.</strong> Built to reach the emotional root, so you feel the shift in your body.</li>
-          </ul>
-
-          <img src="images/tapping-phrases-cover.jpg" srcset="images/tapping-phrases-cover-520.jpg 520w, images/tapping-phrases-cover.jpg 840w" sizes="(max-width: 600px) 260px, 420px" alt="The 28 Powerful EFT Statements guide, cover and inside spread" class="mbm-hero__img mbm-hero__img--mobile" width="840" height="630" decoding="async" fetchpriority="high" />
-
-          <div class="mbm-form-card" id="optin">
-            <!-- ================================================
-                 SENDFOX OPT-IN FORM
-                 ================================================ -->
-            <form method="post" action="https://sendfox.com/form/m44x5n/m78exv" class="sendfox-form mbm-form" id="m78exv" data-async="true" data-recaptcha="true">
-              <div class="form-group">
-                <label for="sendfox_form_name">First Name</label>
-                <input type="text" id="sendfox_form_name" placeholder="First name" name="first_name" required />
-              </div>
-              <div class="form-group">
-                <label for="sendfox_form_email">Email</label>
-                <input type="email" id="sendfox_form_email" placeholder="Your best email address" name="email" required />
-              </div>
-              <!-- no botz please -->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="a_password" tabindex="-1" value="" autocomplete="off" /></div>
-              <button type="submit" class="btn btn--primary btn--lg btn--full">Send Me the Free Guide</button>
-            </form>
-
-            <p class="mbm-form-card__privacy">No spam, ever. Unsubscribe anytime.</p>
-          </div>
-
-          <p class="mbm-hero__after">
-            Most people know where to tap. They freeze on what to say.
-            <span class="mbm-hero__after-line">These are the 28 I come back to again and again.</span>
+          <p class="op-privacy">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            Free. Instant download. Unsubscribe anytime.
           </p>
         </div>
-
-        <div class="mbm-hero__image">
-          <img src="images/tapping-phrases-cover.jpg" srcset="images/tapping-phrases-cover-520.jpg 520w, images/tapping-phrases-cover.jpg 840w" sizes="(max-width: 600px) 260px, 420px" alt="The 28 Powerful EFT Statements guide, cover and inside spread" class="mbm-hero__img" width="840" height="630" decoding="async" fetchpriority="high" />
-        </div>
-
       </div>
 
-      <!-- ================================================
-           PROOF
-           ================================================ -->
-      <div class="mbm-proof">
-        <div class="testimonial-card reveal delay-1">
-          <div class="testimonial-card__stars">★★★★★</div>
-          <p class="testimonial-card__quote">
-            "Thanks Michael! I was suffering from pain and irritation for more than 5 days. After just one EFT session it's been more than 12 hours that I'm feeling so relaxed! I cannot believe how quickly this worked."
-          </p>
-          <div class="testimonial-card__author">Amit Singh</div>
-          <div class="testimonial-card__location">India</div>
-        </div>
+      <!-- Desktop only. Lazy, so phones (where it is hidden) never download it. -->
+      <div class="op-hero__art">
+        <img src="images/tapping-phrases-cover.jpg" srcset="images/tapping-phrases-cover-520.jpg 520w, images/tapping-phrases-cover.jpg 840w" sizes="460px" alt="The 28 Powerful EFT Statements guide, cover and inside spread" width="840" height="630" loading="lazy" decoding="async" />
+      </div>
 
-        <div class="testimonial-card reveal delay-2">
-          <div class="testimonial-card__stars">★★★★★</div>
-          <p class="testimonial-card__quote">
-            "My digestive problems have lessened; and in times when I feel deeply triggered in a PTSD fog, I can get myself out of it and be back to the present time. EFT has become an essential tool in my daily life."
-          </p>
-          <div class="testimonial-card__author">Paula West, M.D.</div>
-          <div class="testimonial-card__location">Medical Doctor, USA</div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       PROOF BAR
+       ================================================ -->
+  <section class="op-proof" aria-label="About Michael">
+    <div class="wrap">
+      <ul>
+        <li><strong>40,000+</strong><span>YouTube subscribers</span></li>
+        <li><strong>1,000+</strong><span>client sessions</span></li>
+        <li><strong>10+ years</strong><span>in Chinese medicine</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================================================
+       THE PROBLEM
+       ================================================ -->
+  <section class="af-section">
+    <div class="wrap op-narrow">
+      <h2>Most people know where to tap. They freeze on what to say.</h2>
+      <p>So they say something vague, it never reaches what's underneath, and they decide tapping doesn't work for them. These are the 28 phrases I come back to again and again.</p>
+    </div>
+  </section>
+
+  <!-- ================================================
+       A PEEK INSIDE
+       Real lines from the guide's 28-statement script, labelled with the
+       feeling each one speaks to. Swap any of them for your own picks.
+       ================================================ -->
+  <section class="af-section op-peek op-follow">
+    <div class="wrap op-narrow">
+      <span class="af-eyebrow">A peek inside</span>
+      <h2>The right words for the feeling you're actually in</h2>
+
+      <ul class="af-card op-phrases">
+        <li><span class="op-phrases__tag">Fear and worry</span><q>All this fear, all this worry, all this resistance.</q></li>
+        <li><span class="op-phrases__tag">Anger</span><q>It's not fair, I'm so friggen' angry right now, and that's ok.</q></li>
+        <li><span class="op-phrases__tag">Tension in the body</span><q>All this tension, in my body and in my mind. I accept how I feel.</q></li>
+      </ul>
+
+      <ul class="op-chips" aria-label="Feelings the phrases help with">
+        <li>Anxiety and worry</li>
+        <li>Anger and frustration</li>
+        <li>Grief and loss</li>
+        <li>Fear and panic</li>
+        <li>Sleep and racing mind</li>
+        <li>Physical pain</li>
+        <li>Cravings</li>
+        <li>Low self-worth</li>
+        <li>Overthinking</li>
+        <li>Overwhelm</li>
+        <li>Feeling numb</li>
+        <li>Feeling stuck</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================================================
+       COVER
+       ================================================ -->
+  <section class="af-section op-cover op-cover--wide">
+    <div class="wrap op-narrow">
+      <img src="images/tapping-phrases-cover.jpg" srcset="images/tapping-phrases-cover-520.jpg 520w, images/tapping-phrases-cover.jpg 840w" sizes="(max-width: 460px) 100vw, 420px" alt="The 28 Powerful EFT Statements guide, cover and inside spread" width="840" height="630" loading="lazy" decoding="async" />
+    </div>
+  </section>
+
+  <!-- ================================================
+       TESTIMONIALS
+       ================================================ -->
+  <section class="af-section op-quotes">
+    <div class="wrap">
+      <div class="af-quotes">
+        <figure class="af-card af-quote">
+          <div class="af-quote__stars" role="img" aria-label="5 out of 5 stars">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          </div>
+          <blockquote><p>&ldquo;Thanks Michael! I was suffering from pain and irritation for more than 5 days. After just one EFT session it's been more than 12 hours that I'm feeling so relaxed! I cannot believe how quickly this worked.&rdquo;</p></blockquote>
+          <cite>Amit Singh<span class="af-quote__where">India</span></cite>
+        </figure>
+
+        <figure class="af-card af-quote">
+          <div class="af-quote__stars" role="img" aria-label="5 out of 5 stars">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          </div>
+          <blockquote><p>&ldquo;My digestive problems have lessened; and in times when I feel deeply triggered in a PTSD fog, I can get myself out of it and be back to the present time. EFT has become an essential tool in my daily life.&rdquo;</p></blockquote>
+          <cite>Paula West, M.D.<span class="af-quote__where">Medical Doctor, USA</span></cite>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       ABOUT
+       ================================================ -->
+  <section class="af-section op-about">
+    <div class="wrap op-narrow">
+      <div class="af-person">
+        <img src="images/michael-bio-circle.jpg" alt="Michael Hetherington" width="300" height="300" loading="lazy" decoding="async" />
+        <div>
+          <h2>Made by Michael Hetherington</h2>
+          <p>Chinese medicine practitioner and EFT trainer. These are the phrases that land hardest, from years of sessions with people who couldn't get started on their own.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ================================================
-       WHAT'S INSIDE
+       FINAL CALL TO ACTION
        ================================================ -->
-  <section class="section section--cream">
-    <div class="container">
-      <div class="section__header reveal">
-        <span class="section__label">What's Inside</span>
-        <h2>The Right Words, for the Feeling You Are Actually In</h2>
-        <p class="section__subtitle">
-          Plain words, no flowery scripts. Every phrase is written to be said out loud exactly as it is, so there is nothing to invent while you are already upset.
-        </p>
-      </div>
-
-      <div class="problem-grid">
-        <div class="problem-item reveal delay-1"><div class="problem-item__icon">😣</div><p>Anxiety &amp; Worry</p></div>
-        <div class="problem-item reveal delay-2"><div class="problem-item__icon">😠</div><p>Anger &amp; Frustration</p></div>
-        <div class="problem-item reveal delay-3"><div class="problem-item__icon">💔</div><p>Grief &amp; Loss</p></div>
-        <div class="problem-item reveal delay-1"><div class="problem-item__icon">😰</div><p>Fear &amp; Panic</p></div>
-        <div class="problem-item reveal delay-2"><div class="problem-item__icon">🌙</div><p>Sleep &amp; Racing Mind</p></div>
-        <div class="problem-item reveal delay-3"><div class="problem-item__icon">🤕</div><p>Physical Pain</p></div>
-        <div class="problem-item reveal delay-1"><div class="problem-item__icon">🍫</div><p>Cravings</p></div>
-        <div class="problem-item reveal delay-2"><div class="problem-item__icon">😔</div><p>Low Self-Worth</p></div>
-        <div class="problem-item reveal delay-3"><div class="problem-item__icon">🔁</div><p>Overthinking</p></div>
-        <div class="problem-item reveal delay-1"><div class="problem-item__icon">😓</div><p>Overwhelm</p></div>
-        <div class="problem-item reveal delay-2"><div class="problem-item__icon">🫥</div><p>Feeling Numb</p></div>
-        <div class="problem-item reveal delay-3"><div class="problem-item__icon">🧍</div><p>Feeling Stuck</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================
-       WHY I MADE THIS
-       ================================================ -->
-  <section class="section" id="why">
-    <div class="container">
-      <div class="mbm-story reveal">
-        <span class="section__label">Why I Made This</span>
-        <h2>The Tapping Is Easy. Knowing What to Say Is the Hard Part.</h2>
-        <p>
-          Almost everyone I teach hits the same wall. The points are simple enough to learn in ten minutes, and then they sit there with their fingers on the side of their hand, not knowing what words to put to it. So they say something vague, it never reaches the thing underneath, they feel very little, and they quietly decide tapping does not work for them.
-        </p>
-        <p>
-          These are the phrases I have found land hardest, drawn from my own practice and from years of sessions with people who could not get started on their own. Say them exactly as they are written. Once they are familiar, swap in your own issue and they keep working.
-        </p>
-
-        <div class="mbm-author">
-          <img src="images/michael-bio-circle.jpg" alt="Michael Hetherington" class="mbm-author__photo" width="300" height="300" loading="lazy" />
-          <div>
-            <p class="mbm-author__name">Michael Hetherington</p>
-            <ul class="mbm-author__creds">
-              <li>Bachelor of Health Science (Chinese Medicine)</li>
-              <li>Postgraduate Diploma of Counselling</li>
-              <li>EFT Tapping Expert and Trainer</li>
-              <li>Over 10 Years of Experience</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================
-       FINAL CTA
-       ================================================ -->
-  <section class="final-cta">
-    <div class="final-cta__circle final-cta__circle--1"></div>
-    <div class="final-cta__circle final-cta__circle--2"></div>
-
-    <div class="container">
-      <div class="reveal">
-        <span class="section__label" style="color: var(--blue-200);">Free Guide</span>
-        <h2>Get Your Free Copy of The 28 Best EFT Tapping Phrases</h2>
-        <p>It only takes a few seconds, and it'll land in your inbox in a few minutes.</p>
-      </div>
-
-      <div class="reveal delay-2 mbm-final-form-wrap">
-        <a href="#optin" class="btn btn--primary btn--lg">Send Me the Free Guide &uarr;</a>
-        <p class="mbm-form-card__privacy" style="color: var(--blue-100);">No spam, ever. Unsubscribe anytime.</p>
-      </div>
+  <section class="af-navy af-final">
+    <div class="wrap">
+      <h2>Get the words that make tapping work</h2>
+      <a href="#optin" class="af-btn af-btn--auto">Get the Free Phrases</a>
+      <p class="af-small">Lands in your inbox in about a minute.</p>
     </div>
   </section>
 
   <!-- ================================================
        FOOTER
        ================================================ -->
-  <footer class="site-footer">
-    <div class="container">
-      <p class="footer-logo">Heal Yourself with EFT</p>
-      <p class="footer-tagline">with Michael Hetherington | Made with Love</p>
-
-      <p class="footer-copy">&copy; 2026 Michael Hetherington | healyourselfeft.com</p>
-
-      <p class="footer-disclaimer">
-        EFT Tapping is considered a complementary therapy and is not a replacement for medical or psychological treatment.
-        Results may vary. Always consult a qualified healthcare professional for serious medical conditions.
-      </p>
+  <footer class="af-footer">
+    <div class="wrap">
+      <p>EFT Tapping is considered a complementary therapy and is not a replacement for medical or psychological treatment. Results may vary. Always consult a qualified healthcare professional for serious medical conditions.</p>
+      <p>&copy; 2026 Michael Hetherington &middot; healyourselfeft.com</p>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
   <script src="https://cdn.sendfox.com/js/form.js" charset="utf-8"></script>
   <script>
   (function () {

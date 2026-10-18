@@ -132,6 +132,13 @@ a { color: var(--btn); }
 .af-quote blockquote { margin: 0; }
 .af-quote p { font-family: var(--serif); font-size: 1.15rem; font-style: italic; line-height: 1.5; color: var(--navy); }
 .af-quote cite { display: block; margin-top: 10px; font-size: 0.875rem; font-style: normal; color: var(--muted); }
+.af-quote__where { display: block; font-size: 0.8rem; color: var(--muted); }
+
+.af-quotes { display: grid; gap: 14px; }
+.af-quotes .af-quote { max-width: none; margin: 0; padding: 18px 16px; }
+.af-quotes .af-quote__stars { margin-bottom: 8px; }
+.af-quotes .af-quote p { font-size: 0.98rem; line-height: 1.45; }
+.af-quotes .af-quote cite { margin-top: 8px; }
 
 .af-final { padding: 40px 0; text-align: center; }
 .af-final h2 { font-size: 1.5rem; margin-bottom: 18px; }
@@ -197,6 +204,15 @@ a { color: var(--btn); }
 .op-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 0; padding: 0; list-style: none; }
 .op-chips li { padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: #fff; font-size: 0.85rem; line-height: 1.3; }
 .op-chips .op-chips__more { border-color: var(--navy); background: var(--navy); color: #fff; font-weight: 700; }
+
+/* 28 Phrases page: sample lines from the guide, and a wider landscape cover */
+.op-phrases { margin: 0 0 20px; padding: 0; list-style: none; }
+.op-phrases li { padding: 12px 14px; }
+.op-phrases li + li { border-top: 1px solid var(--line); }
+.op-phrases__tag { display: block; margin-bottom: 4px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--btn); }
+.op-phrases q { font-family: var(--serif); font-size: 1rem; font-style: italic; line-height: 1.45; color: var(--navy); }
+.op-cover--wide img { max-width: 280px; }
+.op-quotes, .op-follow { padding-top: 0; }
 
 .op-about { padding-top: 0; }
 .op-about h2 { font-size: 1.25rem; margin-bottom: 4px; }
@@ -279,6 +295,11 @@ a { color: var(--btn); }
   .op-cover img { max-width: 420px; }
   .op-chips li { padding: 7px 14px; font-size: 0.9rem; }
   .op-narrow, .ty-narrow { max-width: 720px; margin: 0 auto; }
+  .af-quotes { grid-template-columns: 1fr 1fr; max-width: 900px; margin: 0 auto; }
+  .af-quotes .af-quote { padding: 24px 22px; }
+  .af-quotes .af-quote p { font-size: 1.05rem; line-height: 1.5; }
+  .op-cover--wide img { max-width: 420px; }
+  .op-quotes, .op-follow { padding-top: 0; }
 
   .ty-hero h1 { font-size: 2.6rem; }
   .ty-hero__img { height: 240px; }
