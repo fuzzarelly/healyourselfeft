@@ -14,6 +14,7 @@
   --btn:        #A9552F;
   --btn-hover:  #8E4626;
   --peach:      #F2C9A8;
+  --sky:        #78AAD8;
   --ink:        #2C3850;
   --muted:      #5B6577;
   --on-navy:    #C9D3E4;
@@ -206,6 +207,10 @@ a { color: var(--btn); }
 .op-chips .op-chips__more { border-color: var(--navy); background: var(--navy); color: #fff; font-weight: 700; }
 
 /* ---- 28 Phrases page ---- */
+/* Light blue accents in this hero instead of the peach */
+.op-hero--sky .af-eyebrow,
+.op-hero--sky .af-hl { color: var(--sky); }
+
 .op-centre { text-align: center; }
 .op-quotes, .op-follow { padding-top: 0; }
 .op-note { margin-top: 14px; text-align: center; }
