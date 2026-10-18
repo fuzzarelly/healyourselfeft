@@ -292,27 +292,43 @@ a { color: var(--btn); }
 
 .ty-secure { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 16px; font-size: 0.82rem; color: var(--muted); }
 
-.ty-bullets { margin: 0 0 22px; padding: 0; list-style: none; }
-.ty-bullets li { position: relative; margin-bottom: 10px; padding-left: 22px; }
+/* Everything below the offer hero: one section rule and one container,
+   kept separate from .af-section so the opt-in pages are unaffected. */
+.ty-sec { padding: 32px 0; }
+.ty-sec h2 { margin: 0 0 16px; font-size: 1.5rem; }
+.ty-wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+.ty-wrap .af-quote,
+.ty-wrap .af-person { max-width: none; }
+
+/* "If this sounds familiar", the reframe box and "What you get".
+   Phones keep the original order (familiar, box, get); from 900px the
+   two lists sit side by side with the box full width underneath. */
+.ty-pair { display: grid; grid-template-areas: "a" "box" "b"; row-gap: 20px; }
+.ty-pair__a { grid-area: a; }
+.ty-pair__b { grid-area: b; margin-top: 12px; }
+.ty-pair .ty-soft { grid-area: box; }
+
+.ty-bullets,
+.ty-gets { display: flex; flex-direction: column; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.ty-bullets li { position: relative; padding-left: 22px; }
 .ty-bullets li::before { content: ""; position: absolute; left: 4px; top: 0.6em; width: 8px; height: 8px; border-radius: 50%; background: var(--btn); }
 
 .ty-soft { padding: 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--cream-soft); }
 .ty-soft strong { color: var(--navy); }
 
-.ty-get { padding-top: 0; }
-.ty-gets { margin: 0; padding: 0; list-style: none; }
-.ty-gets li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+.ty-gets li { display: flex; align-items: flex-start; gap: 10px; }
 .ty-gets .icon { width: 22px; height: 22px; margin-top: 1px; color: var(--ok-icon); }
 
-.ty-teacher { padding-top: 0; }
 .ty-teacher p { font-size: 0.95rem; }
 
 .ty-final h2 { font-size: 1.4rem; }
+/* Own line under the buy button, even when the button is not full width */
 .ty-decline {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  width: fit-content;
   min-height: 44px;
-  margin-top: 10px;
+  margin: 10px auto 0;
   font-size: 0.9rem;
   color: var(--on-navy);
   text-decoration: underline;
@@ -338,7 +354,7 @@ a { color: var(--btn); }
   .op-table th, .op-table td { padding-left: 16px; padding-right: 16px; }
   .op-cover img { max-width: 420px; }
   .op-chips li { padding: 7px 14px; font-size: 0.9rem; }
-  .op-narrow, .ty-narrow { max-width: 720px; margin: 0 auto; }
+  .op-narrow { max-width: 720px; margin: 0 auto; }
   .af-quotes { grid-template-columns: 1fr 1fr; max-width: 900px; margin: 0 auto; }
   .af-quotes .af-quote { padding: 24px 22px; }
   .af-quotes .af-quote p { font-size: 1.05rem; line-height: 1.5; }
@@ -350,6 +366,22 @@ a { color: var(--btn); }
   .ty-hero h1 { font-size: 2.6rem; }
   .ty-hero__img { height: 240px; }
   .ty-price { max-width: 460px; margin-left: auto; margin-right: auto; }
+
+  .ty-sec { padding: 40px 0; }
+  .ty-sec h2 { font-size: 2.1rem; }
+  .ty-wrap { padding: 0 24px; }
+}
+
+@media (min-width: 900px) {
+  .ty-wrap--wide { max-width: 1000px; }
+  .ty-pair {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "a b" "box box";
+    column-gap: 40px;
+    row-gap: 24px;
+    align-items: start;
+  }
+  .ty-pair__b { margin-top: 0; }
 }
 
 @media (min-width: 960px) {
