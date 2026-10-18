@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free Guide: The 100 Mind-Body Map | Heal Yourself with EFT</title>
-  <meta name="description" content="Free guide: 100+ physical conditions, the emotions that may sit beneath them, and what to tap on to begin letting them go. Instant download." />
+  <meta name="description" content="Free PDF: look up your symptom, see the emotion that may be sitting underneath it, and what to tap on to start letting it go. Instant download." />
   <meta name="robots" content="noindex, nofollow" />
 
   <!-- Google tag (gtag.js) -->
@@ -27,262 +27,182 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
-  <!-- Fonts & Icons -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=4" />
-
-  <style>
-    /* Author block in the "why I made this" section. Page local, so it cannot
-       disturb the dark bio section on the home page, which uses .bio-* classes. */
-    .mbm-author {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-      max-width: 540px;
-      margin: 2.75rem auto 0;
-      padding-top: 2rem;
-      border-top: 1px solid var(--cream-dark);
-      text-align: left;
-    }
-
-    .mbm-author__photo {
-      width: 140px;
-      height: 140px;
-      flex-shrink: 0;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center top;
-      background: var(--cream);
-      box-shadow: var(--shadow-md);
-    }
-
-    /* Two classes deep, otherwise .mbm-story p wins on specificity */
-    .mbm-author .mbm-author__name {
-      font-family: var(--font-heading);
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--navy-700);
-      margin: 0 0 10px;
-    }
-
-    .mbm-author__creds {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .mbm-author__creds li {
-      position: relative;
-      padding-left: 20px;
-      margin-bottom: 6px;
-      font-size: 0.92rem;
-      line-height: 1.5;
-      color: var(--text-muted);
-    }
-
-    .mbm-author__creds li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.55em;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--warm-gold);
-    }
-
-    /* The base h2 carries no bottom margin, so this heading sat on its text */
-    .mbm-story h2 { margin-bottom: 1.4rem; }
-
-    /* This paragraph is wrapped in .reveal, so the .final-cta > .container > p
-       rule in style.css misses it and it fell back to dark body text on navy */
-    .final-cta p { color: var(--white); }
-
-    @media (max-width: 560px) {
-      .mbm-author {
-        flex-direction: column;
-        text-align: center;
-        gap: 18px;
-      }
-      .mbm-author__photo { width: 120px; height: 120px; }
-      .mbm-author__creds { display: inline-block; text-align: left; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/ad-funnel.css?v=1" />
 </head>
 <body>
 
   <!-- ================================================
-       HEADER
+       HEADER: wordmark only, no way off the page
        ================================================ -->
-  <header class="site-header">
-    <div class="container">
-      <a href="index.html" class="site-logo">
-        <span class="site-logo__main">Heal Yourself with EFT</span>
-        <span class="site-logo__sub">with Michael Hetherington</span>
-      </a>
+  <header class="af-header">
+    <div class="wrap">
+      <span class="af-wordmark">Heal Yourself with EFT</span>
     </div>
   </header>
 
   <!-- ================================================
        HERO / OPT-IN
        ================================================ -->
-  <section class="mbm-hero">
-    <div class="mbm-hero__glow"></div>
-    <div class="container">
-      <div class="mbm-hero__inner">
+  <section class="af-navy op-hero" id="optin">
+    <div class="wrap op-hero__grid">
 
-        <div class="mbm-hero__copy">
-          <div class="hero__badge">
-            <span class="hero__badge-dot"></span>
-            Free Guide &mdash; Instant Download
-          </div>
+      <div class="op-hero__copy">
+        <span class="af-eyebrow">Free PDF &middot; 115 symptoms &middot; 16 body systems</span>
+        <h1>Your body is trying to tell you <span class="af-hl">something.</span></h1>
+        <p class="op-hero__sub">Look up your symptom. See the emotion that may be sitting underneath it, and what to tap on to start letting it go.</p>
 
-          <h1 class="mbm-hero__title">The 100 <em>Mind-Body</em> Map</h1>
+        <div class="af-card op-form">
+          <!-- ================================================
+               SENDFOX OPT-IN FORM
+               ================================================ -->
+          <form method="post" action="https://sendfox.com/form/m44x5n/m56xvn" class="sendfox-form mbm-form" id="m56xvn" data-async="true" data-recaptcha="true">
+            <div class="op-field">
+              <label for="sendfox_form_name">First name</label>
+              <input type="text" id="sendfox_form_name" placeholder="Your first name" name="first_name" autocomplete="given-name" required />
+            </div>
+            <div class="op-field">
+              <label for="sendfox_form_email">Email</label>
+              <input type="email" id="sendfox_form_email" placeholder="Your best email address" name="email" autocomplete="email" required />
+            </div>
+            <!-- no botz please -->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="a_password" tabindex="-1" value="" autocomplete="off" /></div>
+            <button type="submit" class="af-btn">Send Me the Map</button>
+          </form>
 
-          <p class="mbm-hero__subtitle">
-            More than 100 physical conditions, the emotions that may sit beneath them, and what to tap on to begin letting them go.
+          <p class="op-privacy">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            Free. Instant download. Unsubscribe anytime.
           </p>
-
-          <p class="mbm-hero__desc">
-            Covers back pain, acne, immune problems, sciatica, IBS, headaches, dizziness, vision problems, nausea, hip pain and a lot more.
-          </p>
-
-          <img src="images/mind-body-map-cover.jpg" alt="The 100 Mind-Body Map — free guide preview" class="mbm-hero__img mbm-hero__img--mobile" width="840" height="840" decoding="async" fetchpriority="high" />
-
-          <div class="mbm-form-card" id="optin">
-            <!-- ================================================
-                 SENDFOX OPT-IN FORM
-                 ================================================ -->
-            <form method="post" action="https://sendfox.com/form/m44x5n/m56xvn" class="sendfox-form mbm-form" id="m56xvn" data-async="true" data-recaptcha="true">
-              <div class="form-group">
-                <label for="sendfox_form_name">First Name</label>
-                <input type="text" id="sendfox_form_name" placeholder="First name" name="first_name" required />
-              </div>
-              <div class="form-group">
-                <label for="sendfox_form_email">Email</label>
-                <input type="email" id="sendfox_form_email" placeholder="Your best email address" name="email" required />
-              </div>
-              <!-- no botz please -->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="a_password" tabindex="-1" value="" autocomplete="off" /></div>
-              <button type="submit" class="btn btn--primary btn--lg btn--full">Send Me the Free Guide</button>
-            </form>
-
-            <p class="mbm-form-card__privacy">No spam, ever. Unsubscribe anytime.</p>
-          </div>
         </div>
+      </div>
 
-        <div class="mbm-hero__image">
-          <img src="images/mind-body-map-cover.jpg" alt="The 100 Mind-Body Map — free guide preview" class="mbm-hero__img" width="840" height="840" decoding="async" fetchpriority="high" />
+      <!-- Desktop only. Lazy, so phones (where it is hidden) never download it. -->
+      <div class="op-hero__art">
+        <img src="images/mind-body-map-cover-crop.jpg" alt="The 100 Mind Body Map: a body outline linking headaches, chest tightness, digestive issues, lower back pain and knee pain to the emotions behind them" width="840" height="736" loading="lazy" decoding="async" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================
+       PROOF BAR
+       ================================================ -->
+  <section class="op-proof" aria-label="About Michael">
+    <div class="wrap">
+      <ul>
+        <li><strong>40,000+</strong><span>YouTube subscribers</span></li>
+        <li><strong>1,000+</strong><span>client sessions</span></li>
+        <li><strong>10+ years</strong><span>in Chinese medicine</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================================================
+       A PEEK INSIDE
+       ================================================ -->
+  <section class="af-section op-peek">
+    <div class="wrap op-narrow">
+      <span class="af-eyebrow">A peek inside</span>
+      <h2>When the tests come back clear, but the symptom won't go away</h2>
+      <p class="op-peek__intro">Each page pairs a physical symptom with the emotional pattern that often sits beneath it. A few examples:</p>
+
+      <div class="af-card op-table-card">
+        <table class="op-table">
+          <thead>
+            <tr><th scope="col">Symptom</th><th scope="col">May be holding</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Headaches</td><td>Overthinking, self-criticism</td></tr>
+            <tr><td>Chest tightness</td><td>Grief, sadness, emotional weight</td></tr>
+            <tr><td>Digestive issues</td><td>Fear, anxiety, trouble processing</td></tr>
+            <tr><td>Lower back pain</td><td>Lack of support, feeling burdened</td></tr>
+            <tr><td>Knee pain</td><td>Pride, refusing to bend</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="af-small">Plus 110 more, each with what to focus on and tap on.</p>
+    </div>
+  </section>
+
+  <!-- ================================================
+       COVER AND SYMPTOM CHIPS
+       ================================================ -->
+  <section class="af-section op-cover">
+    <div class="wrap op-narrow">
+      <img src="images/mind-body-map-cover-crop.jpg" alt="The 100 Mind Body Map cover" width="840" height="736" loading="lazy" decoding="async" />
+
+      <ul class="op-chips" aria-label="Some of the symptoms covered">
+        <li>Back pain</li>
+        <li>IBS</li>
+        <li>Headaches</li>
+        <li>Sciatica</li>
+        <li>Acne</li>
+        <li>Dizziness</li>
+        <li>Nausea</li>
+        <li>Hip pain</li>
+        <li>Vision</li>
+        <li>Knee pain</li>
+        <li class="op-chips__more">+ 105 more</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================================================
+       TESTIMONIAL: hidden until a real quote is added.
+       To show it, paste the quote below and delete the word "hidden".
+       ================================================ -->
+  <section class="af-section" hidden>
+    <div class="wrap">
+      <!--
+      <figure class="af-card af-quote">
+        <blockquote><p>&ldquo;REAL QUOTE HERE&rdquo;</p></blockquote>
+        <cite>REAL NAME HERE</cite>
+      </figure>
+      -->
+    </div>
+  </section>
+
+  <!-- ================================================
+       ABOUT
+       ================================================ -->
+  <section class="af-section op-about">
+    <div class="wrap op-narrow">
+      <div class="af-person">
+        <img src="images/michael-bio-circle.jpg" alt="Michael Hetherington" width="300" height="300" loading="lazy" decoding="async" />
+        <div>
+          <h2>Made by Michael Hetherington</h2>
+          <p>Chinese medicine practitioner and EFT trainer. I built this for my own clinic, drawing on Louise Hay, Caroline Myss and Dr David Hawkins, then realised it was too useful to keep to myself.</p>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- ================================================
-       WHAT'S INSIDE
+       FINAL CALL TO ACTION
        ================================================ -->
-  <section class="section section--cream">
-    <div class="container">
-      <div class="section__header reveal">
-        <span class="section__label">What's Inside</span>
-        <h2>Understand the Hidden Emotional Roots Behind Physical Symptoms</h2>
-        <p class="section__subtitle">
-          A simple reference guide for those times conventional medicine finds no clear cause, and you sense there's more going on beneath the surface.
-        </p>
-      </div>
-
-      <div class="problem-grid">
-        <div class="problem-item reveal delay-1"><div class="problem-item__icon">🤕</div><p>Back Pain</p></div>
-        <div class="problem-item reveal delay-2"><div class="problem-item__icon">✨</div><p>Acne &amp; Skin Issues</p></div>
-        <div class="problem-item reveal delay-3"><div class="problem-item__icon">🛡️</div><p>Immune Problems</p></div>
-        <div class="problem-item reveal delay-1"><div class="problem-item__icon">⚡</div><p>Sciatica</p></div>
-        <div class="problem-item reveal delay-2"><div class="problem-item__icon">🌀</div><p>IBS &amp; Digestive Issues</p></div>
-        <div class="problem-item reveal delay-3"><div class="problem-item__icon">🤯</div><p>Headaches</p></div>
-        <div class="problem-item reveal delay-1"><div class="problem-item__icon">💫</div><p>Dizziness</p></div>
-        <div class="problem-item reveal delay-2"><div class="problem-item__icon">👁️</div><p>Vision Problems</p></div>
-        <div class="problem-item reveal delay-3"><div class="problem-item__icon">🤢</div><p>Nausea</p></div>
-        <div class="problem-item reveal delay-1"><div class="problem-item__icon">🦴</div><p>Hip Pain</p></div>
-        <div class="problem-item reveal delay-2"><div class="problem-item__icon">💔</div><p>Chest Tightness</p></div>
-        <div class="problem-item reveal delay-3"><div class="problem-item__icon">🦵</div><p>Knee Pain</p></div>
-      </div>
-
-      <p class="mbm-inside-note reveal">...and a lot more. Over 100 conditions in total, each paired with the emotion that may be driving it and what to focus on, reframe or tap on to start releasing it.</p>
-    </div>
-  </section>
-
-  <!-- ================================================
-       WHY I MADE THIS
-       ================================================ -->
-  <section class="section" id="why">
-    <div class="container">
-      <div class="mbm-story reveal">
-        <span class="section__label">Why I Made This</span>
-        <h2>I Made This for Myself, Then Realised How Useful It Was</h2>
-        <p>
-          Well, I made it for myself really, then realised how useful it was and thought, let me share it. It's for those times when there's no obvious physical cause for a symptom, or when you've tried the conventional route and got little relief.
-        </p>
-        <p>
-          This guide is inspired by the work of Louise Hay, Caroline Myss and Dr David Hawkins, three of the most respected voices connecting the mind and body. I've distilled their insights alongside my own clinical experience into one simple, practical reference.
-        </p>
-
-        <div class="mbm-author">
-          <img src="images/michael-bio-circle.jpg" alt="Michael Hetherington" class="mbm-author__photo" width="300" height="300" loading="lazy" />
-          <div>
-            <p class="mbm-author__name">Michael Hetherington</p>
-            <ul class="mbm-author__creds">
-              <li>Bachelor of Health Science (Chinese Medicine)</li>
-              <li>Postgraduate Diploma of Counselling</li>
-              <li>EFT Tapping Expert and Trainer</li>
-              <li>Over 10 Years of Experience</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================
-       FINAL CTA
-       ================================================ -->
-  <section class="final-cta">
-    <div class="final-cta__circle final-cta__circle--1"></div>
-    <div class="final-cta__circle final-cta__circle--2"></div>
-
-    <div class="container">
-      <div class="reveal">
-        <span class="section__label" style="color: var(--blue-200);">Free Guide</span>
-        <h2>Get Your Free Copy of The 100 Mind-Body Map</h2>
-        <p>It only takes a few seconds, and it'll land in your inbox in a few minutes.</p>
-      </div>
-
-      <div class="reveal delay-2 mbm-final-form-wrap">
-        <a href="#optin" class="btn btn--primary btn--lg">Send Me the Free Guide &uarr;</a>
-        <p class="mbm-form-card__privacy" style="color: var(--blue-100);">No spam, ever. Unsubscribe anytime.</p>
-      </div>
+  <section class="af-navy af-final">
+    <div class="wrap">
+      <h2>Find out what your symptom may be holding</h2>
+      <a href="#optin" class="af-btn af-btn--auto">Get the Free Map</a>
+      <p class="af-small">Lands in your inbox in about a minute.</p>
     </div>
   </section>
 
   <!-- ================================================
        FOOTER
        ================================================ -->
-  <footer class="site-footer">
-    <div class="container">
-      <p class="footer-logo">Heal Yourself with EFT</p>
-      <p class="footer-tagline">with Michael Hetherington | Made with Love</p>
-
-      <p class="footer-copy">&copy; 2026 Michael Hetherington | healyourselfeft.com</p>
-
-      <p class="footer-disclaimer">
-        EFT Tapping is considered a complementary therapy and is not a replacement for medical or psychological treatment.
-        Results may vary. Always consult a qualified healthcare professional for serious medical conditions.
-      </p>
+  <footer class="af-footer">
+    <div class="wrap">
+      <p>This map shows common patterns. It is not a diagnosis and does not replace getting your symptoms checked. EFT Tapping is a complementary practice, not a replacement for medical or psychological care.</p>
+      <p>&copy; 2026 Michael Hetherington &middot; healyourselfeft.com</p>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
   <script src="https://cdn.sendfox.com/js/form.js" charset="utf-8"></script>
   <script>
   (function () {
