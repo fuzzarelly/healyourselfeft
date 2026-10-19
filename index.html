@@ -77,13 +77,13 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
-  <!-- Fonts -->
+  <!-- Fonts: same families as /mind-body-map (Playfair Display + Lato). Loaded without blocking first paint. -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- Loaded without blocking first paint; Georgia shows until the web fonts arrive. -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" /></noscript>
-  <link rel="stylesheet" href="css/home.css?v=1" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600;1,700&family=Lato:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600;1,700&family=Lato:wght@400;700&display=swap" /></noscript>
+  <link rel="preload" as="image" href="images/hero-tapping.webp" fetchpriority="high" media="(min-width: 768px)" />
+  <link rel="stylesheet" href="css/home.css?v=2" />
 </head>
 <body>
 
@@ -109,24 +109,21 @@
   <main id="top">
 
     <!-- ================= HERO ================= -->
-    <section class="hero">
+    <section class="hero band-grad">
       <div class="wrap hero__grid">
         <div class="hero__copy">
-          <div class="hero__eyebrow-row">
-            <img src="images/michael-avatar.webp" width="52" height="52" alt="Michael Hetherington" class="hero__avatar only-mob" />
-            <span class="eyebrow">30-day self-paced EFT tapping program</span>
-          </div>
+          <span class="badge"><span class="badge__dot" aria-hidden="true"></span>30-day self-paced EFT program</span>
           <h1>Your tests say you're fine. <em>Your body says otherwise.</em></h1>
           <p class="hero__sub only-desk">Chronic pain, tension, fatigue, a mind that won't switch off. When stress has nowhere to go, your body carries it. This program teaches you to release it with EFT tapping, 15 minutes a day, from home.</p>
           <p class="hero__sub only-mob">Chronic pain, tension, fatigue, a mind that won't switch off. Learn to release the stress your body has been carrying, 15 minutes a day, from home.</p>
           <div class="hero__actions">
-            <a id="hero-cta" href="https://mindbodymedicineacademy.onlinecoursehost.com/courses/healyourselfwitheft" target="_blank" rel="noopener" class="btn btn--lg btn--shadow" data-cta="hero" data-plan="full">Start the program · $197</a>
+            <a id="hero-cta" href="https://mindbodymedicineacademy.onlinecoursehost.com/courses/healyourselfwitheft" target="_blank" rel="noopener" class="btn btn--lg" data-cta="hero" data-plan="full">Start the program · $197</a>
             <p class="hero__plan"><a href="#pricing">or 3 payments of $90</a><span class="only-mob"> · 14-day guarantee</span></p>
           </div>
           <ul class="checks only-desk">
             <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>14-day money-back guarantee</li>
             <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Instant access</li>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Yours for life</li>
+            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Lifetime access</li>
           </ul>
           <figure class="mini-review">
             <span class="stars" role="img" aria-label="5 out of 5 stars"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span>
@@ -134,11 +131,9 @@
             <figcaption>Beverly H., USA</figcaption>
           </figure>
         </div>
-        <div class="hero__media only-desk">
-          <!-- PLACEHOLDER until Mike supplies it: Michael mid-tap on the collarbone point, warm natural light,
-               relaxed, looking at camera. Real photo, not AI or stock. 4:5 crop, WebP under 150 KB,
-               explicit width/height, NOT lazy (it is the hero). -->
-          <div class="ph ph--portrait">Photo coming soon: Michael tapping on the collarbone point</div>
+        <div class="hero__media">
+          <img src="images/hero-tapping.webp" width="880" height="1100" alt="A woman calmly tapping on the eyebrow point with her eyes closed" fetchpriority="high" decoding="async" />
+          <p class="hero__overlay"><strong>15</strong><span>minutes a day of guided tapping, at home, at your own pace</span></p>
         </div>
       </div>
     </section>
@@ -154,8 +149,8 @@
     </section>
 
     <!-- ================= DOES THIS SOUND LIKE YOU ================= -->
-    <section class="section" id="you">
-      <div class="wrap wrap--narrow stack-lg">
+    <section class="section band-cream" id="you">
+      <div class="wrap wrap--1000 stack-lg">
         <div class="head">
           <span class="eyebrow">Does this sound like you?</span>
           <h2>You've done everything right. And your body still won't settle.</h2>
@@ -168,54 +163,50 @@
           <li class="card card--check"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><p>You've tried medication, physio, breathwork, maybe talk therapy. Some of it helped. None of it lasted.</p></li>
           <li class="card card--check"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><p>The same feelings keep coming back, and you can't work out why.</p></li>
         </ul>
-        <p class="pull">Nothing wrong with you. You're human. Your nervous system has just been holding more than it was built to hold.</p>
+        <p class="pull">Nothing wrong with you. You're human. Your nervous system has simply been holding more than it was built to hold.</p>
       </div>
     </section>
 
     <!-- ================= THE ROOT CAUSE ================= -->
-    <section class="section section--sand" id="how">
+    <section class="section band-white" id="how">
       <div class="wrap stack-lg">
-        <div class="head head--wide">
+        <div class="head">
           <span class="eyebrow">The root cause</span>
-          <h2>Most approaches calm the symptom. This one clears what's underneath.</h2>
+          <h2>Most approaches calm the symptom. This one clears <em>what's underneath.</em></h2>
         </div>
         <ol class="steps">
-          <li class="step">
+          <li class="card card--feature step">
             <span class="step__num" aria-hidden="true">1</span>
             <h3>Stress gets stored</h3>
             <p>Every feeling you pushed down to keep going had to go somewhere. Over the years, it builds up in the body.</p>
           </li>
-          <li class="step">
+          <li class="card card--feature step">
             <span class="step__num" aria-hidden="true">2</span>
             <h3>Your body stays on alert</h3>
             <p>That stored stress keeps your nervous system braced. Muscles tighten, digestion slows, sleep gets light.</p>
           </li>
-          <li class="step">
+          <li class="card card--feature step">
             <span class="step__num" aria-hidden="true">3</span>
             <h3>Symptoms flare</h3>
             <p>Pain, fatigue and anxiety are often the body's way of saying it's still carrying the load.</p>
           </li>
         </ol>
-        <div class="panel">
-          <div class="panel__copy">
-            <h3>How tapping helps your body let go</h3>
-            <p>You gently tap on acupressure points while naming what's bothering you. Research shows this can lower cortisol and calm the brain's alarm centre. Your body gets the message that it's safe, and the charge starts to release.</p>
-            <p>Most tapping courses stop at anxiety. This one is built on Chinese medicine, so it works with the body as well as the mind.</p>
-          </div>
-          <div class="panel__cta">
-            <a href="#pricing" class="btn" data-cta="how">Start the program</a>
-            <span>15 minutes a day · Start tonight</span>
-          </div>
+        <div class="panel grad-panel">
+          <h3>How tapping helps your body <em>let go</em></h3>
+          <p>You gently tap on acupressure points while naming what's bothering you. Research shows this can lower cortisol and calm the brain's alarm centre. Your body gets the message that it's safe, and the charge starts to release.</p>
+          <p>Most tapping courses stop at anxiety. This one is built on Chinese medicine, so it works with the body as well as the mind.</p>
+          <a href="#pricing" class="btn" data-cta="how">Start the program</a>
+          <span class="panel__caption">15 minutes a day · Start tonight</span>
         </div>
       </div>
     </section>
 
     <!-- ================= TRY IT FIRST ================= -->
-    <section class="section" id="try">
+    <section class="section band-grad" id="try">
       <div class="wrap stack-lg">
-        <div class="head head--wide">
-          <span class="eyebrow">Try it first, free</span>
-          <h2>Feel the shift in 5 minutes. Right now.</h2>
+        <div class="head">
+          <span class="badge"><span class="badge__dot" aria-hidden="true"></span>Try it first, free</span>
+          <h2>Feel the shift in 5 minutes. <em>Right now.</em></h2>
           <p>Tap along with one of these body-healing sessions. Notice how your body feels before, then after. The program takes this same method deeper, week by week.</p>
         </div>
 
@@ -273,122 +264,129 @@
     </section>
 
     <!-- ================= REVIEWS ================= -->
-    <section class="section section--white" id="reviews">
+    <section class="section band-cream" id="reviews">
       <div class="wrap stack-lg">
         <div class="head">
           <span class="eyebrow">In their words</span>
           <h2>What changes when the body lets go</h2>
         </div>
         <div class="reviews">
-          <figure class="review">
+          <figure class="card review">
             <span class="stars" role="img" aria-label="5 out of 5 stars"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span>
             <span class="tag">Sleep, fog, self-criticism</span>
             <blockquote>"2023 found me broken after a year of living with my mother in the last year of her life. Since working with EFT: fall asleep much easier, significant quieting of the shame narratives, more compassion for myself, improved patience, the mental fog is clearing, digestion has improved. In my life, Michael, you have been a blessing."</blockquote>
             <figcaption><span class="avatar" aria-hidden="true">BH</span><span><strong>Beverly Heatherton</strong><span>USA</span></span></figcaption>
           </figure>
-          <figure class="review">
+          <figure class="card review">
             <span class="stars" role="img" aria-label="5 out of 5 stars"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span>
             <span class="tag">Digestion, PTSD</span>
             <blockquote>"My digestive problems have lessened; and in times when I feel deeply triggered in a PTSD fog, I can get myself out of it and be back to the present time. EFT has become an essential tool in my daily life."</blockquote>
             <figcaption><span class="avatar" aria-hidden="true">PW</span><span><strong>Paula West, M.D.</strong><span>Medical doctor, USA</span></span></figcaption>
           </figure>
-          <figure class="review">
+          <figure class="card review">
             <span class="stars" role="img" aria-label="5 out of 5 stars"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span>
             <span class="tag">Pain</span>
             <blockquote>"Thanks Michael! I was suffering from pain and irritation for more than 5 days. After just one EFT session it's been more than 12 hours that I'm feeling so relaxed! I cannot believe how quickly this worked."</blockquote>
             <figcaption><span class="avatar" aria-hidden="true">AS</span><span><strong>Amit Singh</strong><span>India</span></span></figcaption>
           </figure>
         </div>
-
-        <!-- VIDEO TESTIMONIAL SLOT: hidden until a video exists. One 30 to 60 second phone video from a past student, captioned.
-        <div class="video-testimonial">
-          <button type="button" class="yt" data-id="VIDEO_ID" data-slot="testimonial" ...>...</button>
-        </div>
-        -->
-
-        <!-- SocialJuice carousel: desktop only (keeps the mobile page short). The iframe is only added
-             when this box scrolls near the viewport (js/home.js). -->
-        <div class="socialjuice only-desk" data-src="https://embed.socialjuice.io/carousel/6981?s=michaelhetherington&amp;id=7436&amp;custom=true"></div>
       </div>
     </section>
 
     <!-- ================= THE 30 DAYS ================= -->
-    <section class="section section--sand" id="program">
+    <section class="section band-white" id="program">
       <div class="wrap stack-lg">
-        <div class="head head--wide">
+        <div class="head">
           <span class="eyebrow">The 30 days</span>
           <h2>Week by week, from tense to settled</h2>
-          <p>One video class a week. About 15 minutes of tapping most days. Go faster or slower, it's yours.</p>
+          <p>One video class a week and about 15 minutes of tapping most days. Work through it at your own pace.</p>
         </div>
         <ol class="weeks">
-          <li class="week">
-            <span class="label">Week 1</span>
-            <h3>Find your pattern</h3>
-            <p>Spot the emotion your body defaults to under stress and learn the core tapping routine.</p>
-            <p class="week__shift"><strong>What shifts:</strong> you have a tool that calms your stress response, today.</p>
+          <li class="card card--feature week">
+            <img src="images/week-1.webp" width="640" height="480" alt="Woman reflecting at her desk at night" loading="lazy" decoding="async" />
+            <div class="week__body">
+              <span class="label">Week 1</span>
+              <h3>Find your pattern</h3>
+              <p>Identify the emotion your body defaults to under stress and learn the core tapping routine.</p>
+              <p class="week__shift"><strong>What shifts:</strong> you have a tool that calms your stress response, from day one.</p>
+            </div>
           </li>
-          <li class="week">
-            <span class="label">Week 2</span>
-            <h3>Clear the root memories</h3>
-            <p>Gently work through the moments keeping your nervous system stuck in survival mode.</p>
-            <p class="week__shift"><strong>What shifts:</strong> old hurts lose their charge, without reliving them.</p>
+          <li class="card card--feature week">
+            <img src="images/week-2.webp" width="640" height="480" alt="Woman tapping while recalling a childhood memory" loading="lazy" decoding="async" />
+            <div class="week__body">
+              <span class="label">Week 2</span>
+              <h3>Clear the root memories</h3>
+              <p>Gently work through the experiences keeping your nervous system in survival mode.</p>
+              <p class="week__shift"><strong>What shifts:</strong> old hurts lose their charge, without reliving them.</p>
+            </div>
           </li>
-          <li class="week">
-            <span class="label">Week 3</span>
-            <h3>Face the fears behind the symptoms</h3>
-            <p>Work on the worries and beliefs that quietly keep a condition in place.</p>
-            <p class="week__shift"><strong>What shifts:</strong> the 'what if it never gets better' loop starts to loosen.</p>
+          <li class="card card--feature week">
+            <img src="images/week-3.webp" width="640" height="480" alt="Woman standing calm while fears swirl around her" loading="lazy" decoding="async" />
+            <div class="week__body">
+              <span class="label">Week 3</span>
+              <h3>Face the fears behind the symptoms</h3>
+              <p>Address the worries and beliefs that quietly keep a condition in place.</p>
+              <p class="week__shift"><strong>What shifts:</strong> the 'what if it never gets better' loop starts to loosen.</p>
+            </div>
           </li>
-          <li class="week">
-            <span class="label">Week 4</span>
-            <h3>Strengthen the healing response</h3>
-            <p>Train your nervous system toward rest and repair, and lock in your tools.</p>
-            <p class="week__shift"><strong>What shifts:</strong> you know what to do the next time life gets heavy.</p>
+          <li class="card card--feature week">
+            <img src="images/week-4.webp" width="640" height="480" alt="Woman tapping with light flowing through her body" loading="lazy" decoding="async" />
+            <div class="week__body">
+              <span class="label">Week 4</span>
+              <h3>Strengthen the healing response</h3>
+              <p>Train your nervous system toward rest and repair, and consolidate your tools.</p>
+              <p class="week__shift"><strong>What shifts:</strong> you know what to do the next time life gets heavy.</p>
+            </div>
           </li>
         </ol>
       </div>
     </section>
 
     <!-- ================= WHAT YOU GET ================= -->
-    <section class="section" id="inside">
-      <div class="wrap split">
-        <div class="split__copy stack">
-          <div class="head">
-            <span class="eyebrow">What you get</span>
-            <h2>Everything you need to do this on your own</h2>
-          </div>
-          <ul class="ticks">
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span><strong>4 video classes</strong>, 90 minutes each, watch any time</span></li>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Weekly worksheets</strong> that walk you through each step</span></li>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Tap-along audio guides</strong> for the car, the bath, the 2am wake-ups</span></li>
-            <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span><strong>10 specialty scripts</strong> for pain, anxiety, grief and relationships</span></li>
-          </ul>
-          <div class="bonus">
-            <span class="label label--ink">Bonuses included</span>
-            <ul>
-              <li>Working with Grief and Sadness</li>
-              <li>Food Sensitivities and the Gut-Brain Link</li>
-              <li>Introduction to Medical Qi Gong</li>
-              <li>How to Heal Any Relationship with EFT (master class)</li>
+    <section class="section band-cream" id="inside">
+      <div class="wrap stack-lg">
+        <div class="head">
+          <span class="eyebrow">What you get</span>
+          <h2>Everything you need to do this on your own</h2>
+        </div>
+        <div class="split">
+          <div class="split__copy">
+            <ul class="ticks">
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span><strong>4 video classes</strong>, 90 minutes each, available any time</span></li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Weekly worksheets</strong> that guide you through each step</span></li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Tap-along audio guides</strong> for the car, the bath, the 2am wake-ups</span></li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span><strong>10 specialty scripts</strong> for pain, anxiety, grief and relationships</span></li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Certificate of completion</strong> when you finish all lessons</span></li>
             </ul>
+            <div class="bonus">
+              <span class="label">Bonuses included</span>
+              <ul>
+                <li>Working with Grief and Sadness</li>
+                <li>Food Sensitivities and the Gut-Brain Link</li>
+                <li>Introduction to Medical Qi Gong</li>
+                <li>How to Heal Any Relationship with EFT (master class)</li>
+              </ul>
+            </div>
           </div>
-          <p class="value">One private EFT session usually costs $100 to $200. This gives you the whole method, for life, for less than two.</p>
+          <figure class="shot">
+            <div class="shot__frame">
+              <span class="shot__dots" aria-hidden="true"><span></span><span></span><span></span></span>
+              <img src="images/course-dashboard.webp" width="1200" height="607" alt="Inside the Heal Yourself with EFT course: the Module 1 video lesson with the lesson list beside it" loading="lazy" decoding="async" />
+            </div>
+            <figcaption>Inside the program: 17 lessons, video classes, downloads and progress tracking</figcaption>
+          </figure>
         </div>
-        <div class="split__media">
-          <!-- PLACEHOLDER until Mike supplies it: real screenshot of the course dashboard on a laptop, plus a phone
-               showing an audio guide. 5:4, WebP under 150 KB, explicit width/height, loading="lazy". -->
-          <div class="ph ph--product">Product shot coming soon: the course dashboard and an audio guide</div>
-        </div>
+        <p class="value">One private EFT session usually costs $100 to $200. This program gives you the complete method, for life, for less than the cost of two.</p>
       </div>
     </section>
 
     <!-- ================= PRICING ================= -->
-    <section class="section section--navy" id="pricing">
-      <div class="wrap wrap--narrow stack-lg pricing">
-        <div class="head head--center">
-          <span class="eyebrow eyebrow--peach">Join today</span>
-          <h2>Start tonight. Go at your own pace.</h2>
-          <p>Same program, same lifetime access. Pick how you'd like to pay.</p>
+    <section class="section band-grad" id="pricing">
+      <div class="wrap wrap--1000 stack-lg pricing">
+        <div class="head">
+          <span class="badge"><span class="badge__dot" aria-hidden="true"></span>Join today</span>
+          <h2>Start tonight. <em>Go at your own pace.</em></h2>
+          <p>Same program, same lifetime access. Choose how you'd like to pay.</p>
         </div>
         <div class="plans">
           <div class="plan plan--best">
@@ -411,64 +409,72 @@
         </ul>
         <div class="guarantee">
           <svg class="guarantee__icon" aria-hidden="true"><use href="#i-shield"/></svg>
-          <div>
-            <h3>14-day money-back guarantee</h3>
-            <p>Do the program. If it's not right for you, email me within 14 days of buying and I'll refund you in full. No questions asked. Michael</p>
-          </div>
+          <h3>14-day money-back guarantee</h3>
+          <p>Work through the program. If it is not right for you, email within 14 days of purchase for a full refund. No questions asked.</p>
         </div>
         <p class="pricing__foot">Secure checkout · Prices in USD, any card works</p>
+        <a href="#map" class="pricing__map" data-map="pricing">Not ready yet? Start with the free Mind-Body Map</a>
       </div>
     </section>
 
     <!-- ================= YOUR GUIDE ================= -->
-    <section class="section" id="about">
-      <div class="wrap about">
-        <img src="images/michael-about.webp" width="380" height="380" alt="Michael Hetherington, acupuncturist and EFT trainer" class="about__photo" loading="lazy" decoding="async" />
-        <div class="stack">
-          <div class="head">
-            <span class="eyebrow">Your guide</span>
-            <h2>Not an app. A real practitioner.</h2>
+    <section class="section band-white" id="about">
+      <div class="wrap wrap--1060 stack-lg">
+        <div class="head">
+          <span class="eyebrow">Your guide</span>
+          <h2>Not an app. <em>A qualified practitioner.</em></h2>
+        </div>
+        <div class="about">
+          <div class="about__copy">
+            <p>Michael Hetherington is an Australian acupuncturist, EFT practitioner and educator. He holds a Bachelor of Health Science in Traditional Chinese Medicine and a Graduate Certificate in Counselling, and is an IICT-accredited EFT practitioner and trainer.</p>
+            <p>Over more than 10 years of clinical practice, Michael has worked with over 1,000 clients, many of them living with stress-related pain, fatigue, anxiety and digestive symptoms that conventional treatment had not resolved. His approach integrates EFT with Chinese medicine and current understanding of the nervous system.</p>
+            <p>He has taught workshops in Australia, Thailand, Bali, the United States and Europe, and has presented alongside energy medicine leaders Donna Eden and Dr David Feinstein. Heal Yourself with EFT brings his clinical method together in a structured 30-day program you can complete at home.</p>
           </div>
-          <p>G'day, I'm Michael. I'm an acupuncturist and EFT trainer from Australia. For over 10 years I've worked with people whose bodies were holding stress that nothing else could shift.</p>
-          <p>This program is the method I used in more than 1,000 private sessions, laid out step by step so you can do it yourself, at home, for life.</p>
-          <ul class="chips">
-            <li>Bachelor of Health Science, Chinese Medicine</li>
-            <li>IICT-accredited EFT trainer</li>
-            <li>Graduate Certificate, Counselling</li>
-            <li>Yoga and Qi Gong teacher</li>
-          </ul>
+          <div class="quals grad-panel">
+            <span class="label label--light">Qualifications</span>
+            <ul>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Bachelor of Health Science (Traditional Chinese Medicine, Acupuncture)</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Graduate Certificate in Counselling</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Certified EFT Practitioner and Trainer (IICT)</li>
+              <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Yoga and Qi Gong teacher</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= SCIENCE ================= -->
-    <section class="section section--sand" id="science">
-      <div class="wrap science">
-        <div class="stack">
-          <div class="head">
-            <span class="eyebrow">For the sceptics</span>
-            <h2>Is tapping actually real?</h2>
-          </div>
-          <p>Fair question. EFT has been tested in randomised controlled trials and published in peer-reviewed journals, with consistent drops in stress, anxiety and pain. It's not magic. It's acupressure plus a calmer brain.</p>
+    <!-- ================= THE RESEARCH ================= -->
+    <section class="section band-navy" id="science">
+      <div class="wrap wrap--900 science">
+        <div class="head">
+          <span class="badge"><span class="badge__dot" aria-hidden="true"></span>The research</span>
+          <h2>Is EFT tapping <em>actually real?</em></h2>
         </div>
+        <p class="science__lead">If you're sceptical, that's completely fair. EFT is not new-age guesswork. It has been studied by more than 200 researchers across 12 countries, with 275 studies published in peer-reviewed scientific journals, including 70 randomised controlled trials. The results consistently show real reductions in stress, anxiety, PTSD and emotional distress.</p>
+        <p class="science__sub">It works by gently tapping on acupressure points on the body while speaking about what's bothering you. This combination calms your nervous system and helps release the emotional charge around the issue.</p>
+        <ul class="stats">
+          <li><strong data-count="275">275</strong><span>peer-reviewed<br />studies</span></li>
+          <li><strong data-count="200" data-suffix="+">200+</strong><span>researchers<br />worldwide</span></li>
+          <li><strong data-count="70">70</strong><span>randomised<br />controlled trials</span></li>
+          <li><strong data-count="12">12</strong><span>countries<br />with research</span></li>
+        </ul>
+        <p class="science__sub">Here are some studies you can check out:</p>
         <div class="studies">
           <a href="https://journals.sagepub.com/doi/10.1177/2515690X18823691" target="_blank" rel="noopener" class="study">
             <span class="study__journal">Journal of Evidence-Based Integrative Medicine</span>
-            <span class="study__title">Clinical EFT improves multiple physiological markers of health</span>
-            <span class="study__link">Read the study</span>
+            <span class="study__title">Clinical EFT Improves Multiple Physiological Markers of Health &rarr;</span>
           </a>
           <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2019.00272/full" target="_blank" rel="noopener" class="study">
             <span class="study__journal">Frontiers in Psychology</span>
-            <span class="study__title">EFT for treating post-traumatic stress disorder</span>
-            <span class="study__link">Read the study</span>
+            <span class="study__title">Emotional Freedom Techniques for Treating Post-Traumatic Stress Disorder &rarr;</span>
           </a>
         </div>
       </div>
     </section>
 
     <!-- ================= FAQ ================= -->
-    <section class="section" id="faq">
-      <div class="wrap wrap--faq stack-lg">
+    <section class="section band-cream" id="faq">
+      <div class="wrap wrap--820 stack-lg">
         <div class="head">
           <span class="eyebrow">Questions</span>
           <h2>Before you start</h2>
@@ -476,45 +482,54 @@
         <div class="faq">
           <details open>
             <summary>I've tried tapping before and the relief didn't last. Why would this be different?</summary>
-            <p>One session can't clear years of stored stress. This program works through it layer by layer over 30 days, and teaches you to let new feelings move through instead of piling up again.</p>
+            <p>One session can't clear years of stored stress. This program works through it layer by layer over 30 days, and teaches you to let new feelings move through instead of building up again.</p>
           </details>
           <details>
             <summary>I'm completely new to EFT. Is that okay?</summary>
-            <p>Yes. Week 1 starts from zero: the points, the words, and how to work safely with emotions.</p>
+            <p>Yes. Week 1 starts from the beginning: the tapping points, the wording, and how to work safely with emotions.</p>
           </details>
           <details>
             <summary>How much time does it take?</summary>
-            <p>About 15 minutes of tapping most days, plus one 90-minute class a week that you watch whenever suits you.</p>
+            <p>About 15 minutes of tapping most days, plus one 90-minute class a week that you can watch whenever suits you.</p>
           </details>
           <details>
             <summary>Is it really self-paced?</summary>
-            <p>Yes. No live calls and no start date. You get instant, lifetime access the moment you join.</p>
+            <p>Yes. There are no live calls and no start date. You get instant, lifetime access as soon as you join.</p>
           </details>
           <details>
             <summary>Does this replace my doctor or therapist?</summary>
-            <p>No. EFT is a complementary therapy. It works well alongside medical and psychological care, so please keep seeing your practitioners.</p>
+            <p>No. EFT is a complementary therapy. It works well alongside medical and psychological care, so please continue seeing your practitioners.</p>
           </details>
           <details>
             <summary>What if it's not for me?</summary>
-            <p>You're covered by a 14-day money-back guarantee. Email within 14 days of buying for a full refund.</p>
+            <p>You're covered by a 14-day money-back guarantee. Email within 14 days of purchase for a full refund.</p>
           </details>
           <details>
             <summary>What currency are prices in?</summary>
-            <p>US dollars. Your bank converts at checkout, so any card works.</p>
+            <p>US dollars. Your bank converts the amount at checkout, so any card works.</p>
           </details>
         </div>
       </div>
     </section>
 
     <!-- ================= FINAL CTA ================= -->
-    <section class="section section--navy final">
-      <div class="wrap final__inner">
-        <h2>Your body has carried this long enough.</h2>
-        <p>Give it 14 days and 15 minutes a day. If it doesn't help, you get your money back.</p>
+    <section class="section grad-panel final">
+      <div class="wrap wrap--760 final__inner">
+        <h2>Your body has carried this <em>long enough.</em></h2>
+        <p>Give it 15 minutes a day. If it doesn't help, you get your money back.</p>
         <a href="https://mindbodymedicineacademy.onlinecoursehost.com/courses/healyourselfwitheft" target="_blank" rel="noopener" class="btn btn--lg" data-cta="final" data-plan="full">Start the program · $197</a>
         <a href="#pricing" class="final__plan">or 3 payments of $90</a>
-        <hr />
-        <a href="https://healyourselfeft.com/mind-body-map" class="final__map">Not ready yet? Get the free Mind-Body Map first</a>
+      </div>
+    </section>
+
+    <!-- ================= MIND-BODY MAP ================= -->
+    <section class="section band-cream" id="map">
+      <div class="wrap wrap--720 map">
+        <span class="eyebrow">Not ready yet? Start here, free</span>
+        <img src="images/mind-body-map-cover.webp" width="300" height="300" alt="The 100 Mind-Body Map, free guide cover" class="map__cover" loading="lazy" decoding="async" />
+        <h2>The 100 <em>Mind-Body</em> Map</h2>
+        <p>More than 100 physical symptoms, the emotions that may sit beneath them, and what to tap on to start letting them go. Find your symptom and begin tonight.</p>
+        <a href="https://healyourselfeft.com/mind-body-map" class="btn btn--navy" data-map="map_block">Get the free Map</a>
       </div>
     </section>
 
@@ -541,6 +556,6 @@
     <a href="https://mindbodymedicineacademy.onlinecoursehost.com/courses/healyourselfwitheft" target="_blank" rel="noopener" class="btn btn--sm" data-cta="sticky" data-plan="full">Start tonight</a>
   </div>
 
-  <script src="js/home.js?v=1" defer></script>
+  <script src="js/home.js?v=2" defer></script>
 </body>
 </html>
