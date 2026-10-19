@@ -234,5 +234,34 @@
   </footer>
 
   <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+<script>
+(function () {
+  try {
+    var q = new URLSearchParams(window.location.search);
+    if (q.get('src') !== 'zylvie-anxiety') return;
+
+    // Drop src from the address bar, so a bookmark of this "permanent access link" can't record another sale
+    try { q.delete('src'); history.replaceState(null, '', location.pathname + (q.toString() ? '?' + q.toString() : '') + location.hash); } catch (e) {}
+
+    var KEY = 'anx9_purchase_fired';
+    var already = false;
+    try { already = sessionStorage.getItem(KEY) === '1'; } catch (e) {}
+    if (already) return;
+
+    var txn = 'anx9-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'purchase', {
+        transaction_id: txn,
+        value: 9,
+        currency: 'USD',
+        items: [{ item_name: 'Anxiety Class', price: 9, quantity: 1 }]
+      });
+    }
+
+    try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>
