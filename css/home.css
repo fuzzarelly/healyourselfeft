@@ -171,8 +171,8 @@ strong { font-weight: 700; }
 
 .stars { display: inline-flex; gap: 2px; color: var(--warm-gold); }
 .stars svg { width: 16px; height: 16px; }
-.mini-review { margin-top: 6px; padding: 18px 20px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .14); border-radius: 14px; max-width: 560px; }
-.mini-review .stars { color: var(--warm-amber); }
+.mini-review { margin-top: 6px; padding: 18px 24px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .14); border-radius: 14px; width: 100%; max-width: 560px; box-sizing: border-box; text-align: center; }
+.mini-review .stars { color: var(--warm-amber); justify-content: center; }
 .mini-review blockquote { margin: 6px 0 8px; font-style: italic; font-size: 16px; line-height: 1.55; color: var(--blue-25); }
 .mini-review figcaption { font-size: 14px; color: var(--blue-100); }
 
@@ -395,7 +395,7 @@ strong { font-weight: 700; }
   .hero__actions { flex-direction: column; align-items: stretch; width: 100%; gap: 10px; margin-top: 0; }
   .hero__actions .btn { min-height: 56px; padding: 0 20px; }
   .hero__plan { font-size: 14px; }
-  .mini-review { width: 100%; margin-top: 2px; padding: 14px 16px; text-align: left; }
+  .mini-review { margin-top: 2px; }
   .mini-review blockquote { font-size: 15px; }
   .hero__media img { aspect-ratio: 16 / 10; object-position: center 35%; }
 
