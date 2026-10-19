@@ -157,7 +157,10 @@ strong { font-weight: 700; }
 .hero__grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 56px; align-items: center; }
 .hero__copy { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
 .hero h1 { color: var(--white); }
-.hero__sub { font-size: 20px; line-height: 1.6; color: var(--blue-50); max-width: 560px; }
+/* Three-line pain, cause, promise flow */
+.hero__lines { display: flex; flex-direction: column; gap: 10px; max-width: 560px; }
+.hero__lines p { margin: 0; font-family: var(--font-body); font-size: 20px; line-height: 1.5; color: var(--blue-50); }
+.hero__lines p:last-child { color: var(--white); font-weight: 700; }
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 4px; }
 .hero__plan { font-size: 16px; color: var(--blue-50); }
 .hero__plan a { color: var(--white); text-underline-offset: 4px; }
@@ -384,7 +387,11 @@ strong { font-weight: 700; }
   .hero__copy { align-items: center; text-align: center; gap: 14px; }
   .hero .badge { font-size: 11px; padding: 7px 14px; gap: 8px; }
   .hero h1 { font-size: 38px; line-height: 1.08; }
-  .hero__sub { font-size: 16px; line-height: 1.55; }
+  .hero__lines { gap: 8px; text-align: center; }
+  .hero__lines p { font-size: 16px; }
+  .hero .checks { justify-content: center; gap: 4px 14px; font-size: 13px; color: var(--blue-100); }
+  .hero .checks li { gap: 5px; }
+  .hero .checks .ico { width: 14px; height: 14px; }
   .hero__actions { flex-direction: column; align-items: stretch; width: 100%; gap: 10px; margin-top: 0; }
   .hero__actions .btn { min-height: 56px; padding: 0 20px; }
   .hero__plan { font-size: 14px; }
