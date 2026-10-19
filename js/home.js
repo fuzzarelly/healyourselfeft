@@ -7,14 +7,21 @@
     try { if (typeof window.gtag === 'function') window.gtag('event', name, params); } catch (e) {}
   }
 
-  /* ---------- cta_click on every buy button ---------- */
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- cta_click on every buy button, map_click on Map links ---------- */
   document.addEventListener('click', function (e) {
-    var a = e.target.closest ? e.target.closest('[data-cta]') : null;
-    if (!a) return;
-    var params = { cta_location: a.getAttribute('data-cta') };
-    var plan = a.getAttribute('data-plan');
-    if (plan) params.plan = plan;
-    track('cta_click', params);
+    if (!e.target.closest) return;
+    var a = e.target.closest('[data-cta]');
+    if (a) {
+      var params = { cta_location: a.getAttribute('data-cta') };
+      var plan = a.getAttribute('data-plan');
+      if (plan) params.plan = plan;
+      track('cta_click', params);
+      return;
+    }
+    var m = e.target.closest('[data-map]');
+    if (m) track('map_click', { location: m.getAttribute('data-map') });
   });
 
   /* ---------- scroll_depth at 25 / 50 / 75 / 100 ---------- */
@@ -119,29 +126,35 @@
         btn.querySelector('.yt__proof').textContent = prev.proof;
         btn.querySelector('.yt__len').textContent = prev.len;
         play(next);
-        if (mobile.matches) player.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (mobile.matches) player.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
       });
     });
   })();
 
-  /* ---------- SocialJuice carousel, loaded only when scrolled near ---------- */
+  /* ---------- Research counters: count up once when scrolled into view ----------
+     The real numbers are in the HTML, so nothing changes without JS or with reduced motion. */
   (function () {
-    var box = document.querySelector('.socialjuice[data-src]');
-    if (!box) return;
-    function load() {
-      if (box.firstChild) return;
-      var f = document.createElement('iframe');
-      f.src = box.getAttribute('data-src');
-      f.title = 'Student reviews';
-      f.setAttribute('scrolling', 'no');
-      f.setAttribute('allowtransparency', 'true');
-      f.loading = 'lazy';
-      box.appendChild(f);
+    var nums = document.querySelectorAll('.stats [data-count]');
+    if (!nums.length || reduceMotion || !('IntersectionObserver' in window)) return;
+    function run(el) {
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      var start = null;
+      var dur = 1200;
+      function step(t) {
+        if (start === null) start = t;
+        var p = Math.min((t - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased) + (p === 1 ? suffix : '');
+        if (p < 1) window.requestAnimationFrame(step);
+      }
+      window.requestAnimationFrame(step);
     }
-    if (!('IntersectionObserver' in window)) { load(); return; }
     var io = new IntersectionObserver(function (entries) {
-      if (entries.some(function (en) { return en.isIntersecting; })) { io.disconnect(); load(); }
-    }, { rootMargin: '400px 0px' });
-    io.observe(box);
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { io.unobserve(en.target); run(en.target); }
+      });
+    }, { threshold: 0.6 });
+    Array.prototype.forEach.call(nums, function (n) { io.observe(n); });
   })();
 })();
