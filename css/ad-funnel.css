@@ -274,13 +274,14 @@ a { color: var(--btn); }
 
 /* Mind-Body Map thank-you: confirmation and whitelist note at the top */
 .ty-confirm { padding: 18px 0; background: var(--ok-bg); color: var(--ok-ink); }
-.ty-confirm__inner { display: flex; align-items: flex-start; gap: 10px; }
-.ty-confirm .icon { flex: none; margin-top: 3px; color: var(--ok-icon); }
+.ty-confirm__inner { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
+.ty-confirm .icon { flex: none; width: 24px; height: 24px; color: var(--ok-icon); }
 .ty-confirm p + p { margin-top: 8px; }
 
-/* Free download link under the offer */
+/* Free download link under the offer, one line each */
 .ty-free { text-align: center; }
-.ty-free a { font-weight: 700; text-underline-offset: 3px; }
+.ty-free p + p { margin-top: 6px; }
+.ty-free a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; text-underline-offset: 3px; }
 
 /* The "No thanks" link jumps to the download link */
 #mbm-dl { scroll-margin-top: 16px; }
