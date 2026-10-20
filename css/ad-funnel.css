@@ -326,6 +326,24 @@ a { color: var(--btn); }
 .ty-final h2 { font-size: 1.4rem; }
 
 /* ================================================
+   BONUS VIDEO PAGE (nervous-system-reset.html)
+   ================================================ */
+
+.ns-page { padding: 32px 0 44px; text-align: center; }
+.ns-page h1 { font-size: 1.9rem; margin-bottom: 12px; }
+.ns-page__sub { font-size: 1.05rem; margin-bottom: 22px; }
+
+/* 16:9 player that scales with the column */
+.ns-video { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 14px; background: #000; }
+.ns-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.ns-cta { margin-top: 26px; }
+
+/* Softer orange than the buy buttons */
+.af-btn--soft { background: var(--peach); color: var(--navy); }
+.af-btn--soft:hover { background: #ECB894; color: var(--navy); }
+
+/* ================================================
    LARGER SCREENS
    ================================================ */
 
@@ -335,6 +353,8 @@ a { color: var(--btn); }
   .af-section h2, .af-final h2 { font-size: 2.1rem; }
   .af-btn--auto { display: inline-flex; width: auto; min-width: 340px; }
   .af-final { padding: 72px 0; }
+  .ns-page { padding: 56px 0 72px; }
+  .ns-page h1 { font-size: 2.4rem; }
 
   .op-hero h1 { font-size: 2.6rem; }
   .op-proof strong { font-size: 1.6rem; }
