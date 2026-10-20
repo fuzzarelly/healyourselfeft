@@ -263,16 +263,10 @@ a { color: var(--btn); }
 .op-about p { font-size: 0.95rem; }
 
 /* ================================================
-   THANK-YOU PAGE (map-download.html)
+   THANK-YOU PAGES (map-download.html, phrases-download.html)
    ================================================ */
 
-.ty-strip { background: var(--ok-bg); color: var(--ok-ink); }
-.ty-strip .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 0 10px; padding-top: 6px; padding-bottom: 6px; font-size: 0.95rem; }
-.ty-strip__msg { display: flex; align-items: center; gap: 8px; }
-.ty-strip .icon { color: var(--ok-icon); }
-.ty-strip a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; color: var(--ok-ink); text-decoration: underline; text-underline-offset: 3px; }
-
-/* Mind-Body Map thank-you: confirmation and whitelist note at the top */
+/* Confirmation and whitelist note at the top */
 .ty-confirm { padding: 18px 0; background: var(--ok-bg); color: var(--ok-ink); }
 .ty-confirm__inner { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
 .ty-confirm .icon { flex: none; width: 24px; height: 24px; color: var(--ok-icon); }
@@ -282,9 +276,6 @@ a { color: var(--btn); }
 .ty-free { text-align: center; }
 .ty-free p + p { margin-top: 6px; }
 .ty-free a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; text-underline-offset: 3px; }
-
-/* The "No thanks" link jumps to the download link */
-#mbm-dl { scroll-margin-top: 16px; }
 
 .ty-hero { padding: 26px 0 32px; }
 .ty-hero h1 { font-size: 2.1rem; margin-bottom: 12px; }
@@ -333,19 +324,6 @@ a { color: var(--btn); }
 .ty-teacher p { font-size: 0.95rem; }
 
 .ty-final h2 { font-size: 1.4rem; }
-/* Own line under the buy button, even when the button is not full width */
-.ty-decline {
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  min-height: 44px;
-  margin: 10px auto 0;
-  font-size: 0.9rem;
-  color: var(--on-navy);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-.ty-decline:hover { color: #fff; }
 
 /* ================================================
    LARGER SCREENS
