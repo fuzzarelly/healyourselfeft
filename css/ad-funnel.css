@@ -257,6 +257,9 @@ a { color: var(--btn); }
 
 /* Landscape cover, centred */
 .op-cover-img img { width: 100%; max-width: 250px; margin: 0 auto; border-radius: 14px; }
+/* Transparent product mockups: no frame or box shadow, the shadow is in the image */
+.op-cover-img img.is-cutout { max-width: 300px; border-radius: 0; }
+.op-hero__art img.is-cutout { border-radius: 0; box-shadow: none; }
 
 .op-about { padding-top: 0; }
 .op-about h2 { font-size: 1.25rem; margin-bottom: 4px; }
@@ -268,6 +271,7 @@ a { color: var(--btn); }
 
 /* Confirmation and whitelist note at the top */
 .ty-confirm { padding: 18px 0; background: var(--ok-bg); color: var(--ok-ink); }
+.ty-confirm a { color: inherit; font-weight: 700; text-underline-offset: 3px; }
 .ty-confirm__inner { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
 .ty-confirm .icon { flex: none; width: 24px; height: 24px; color: var(--ok-icon); }
 .ty-confirm p + p { margin-top: 8px; }
@@ -368,6 +372,7 @@ a { color: var(--btn); }
   .af-quotes .af-quote { padding: 24px 22px; }
   .af-quotes .af-quote p { font-size: 1.05rem; line-height: 1.5; }
   .op-cover-img img { max-width: 420px; }
+  .op-cover-img img.is-cutout { max-width: 460px; }
   .op-quotes, .op-follow { padding-top: 0; }
   .op-stages { grid-template-columns: 1fr 1fr; gap: 16px; }
   .op-stage { padding: 20px; }
