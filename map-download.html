@@ -24,6 +24,19 @@
     gtag('config', 'AW-1016615342');
   </script>
 
+  <!-- Google Ads sign-up conversion: fires once per browser per page -->
+  <script>
+    (function () {
+      var key = 'mbm_lead_tracked_' + window.location.pathname;
+      try { if (localStorage.getItem(key)) return; localStorage.setItem(key, '1'); } catch (e) {}
+      gtag('event', 'conversion', {
+        send_to: 'AW-1016615342/n_MlCMrR1qcdEK6j4eQD',
+        value: 1.0,
+        currency: 'AUD'
+      });
+    })();
+  </script>
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
