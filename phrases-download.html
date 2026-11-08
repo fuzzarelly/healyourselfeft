@@ -24,6 +24,21 @@
     gtag('config', 'AW-1016615342');
   </script>
 
+  <!-- Google Ads sign-up conversion: only for sign-ups from the YouTube ad page
+       (eft-tapping-phrases-yt.html sets the flag on submit). Fires once per sign-up. -->
+  <script>
+    (function () {
+      var key = 'phrases_yt_signup', ts;
+      try { ts = sessionStorage.getItem(key); sessionStorage.removeItem(key); } catch (e) { return; }
+      if (!ts || Date.now() - Number(ts) > 30 * 60 * 1000) return;
+      gtag('event', 'conversion', {
+        send_to: 'AW-1016615342/n_MlCMrR1qcdEK6j4eQD',
+        value: 1.0,
+        currency: 'AUD'
+      });
+    })();
+  </script>
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
