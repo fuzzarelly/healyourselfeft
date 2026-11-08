@@ -266,6 +266,9 @@
     var f = document.getElementById('1jn0kz');
     if (!f) return;
     f.addEventListener('submit', function () {
+      // Flag this tab so phrases-download.html fires the Google Ads conversion
+      // only for sign-ups from this ad page (not the organic form on michaelhetherington.com)
+      try { sessionStorage.setItem('phrases_yt_signup', String(Date.now())); } catch (e) {}
       try {
         if (typeof gtag === 'function') {
           gtag('event', 'lead_magnet_signup', {
