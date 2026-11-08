@@ -209,6 +209,9 @@
     var f = document.getElementById('3ljz06');
     if (!f) return;
     f.addEventListener('submit', function () {
+      // Flag this tab so map-download.html fires the Google Ads conversion
+      // only for sign-ups from the YouTube ad pages (not organic Map sign-ups)
+      try { sessionStorage.setItem('mbm_yt_signup', String(Date.now())); } catch (e) {}
       try {
         if (typeof gtag === 'function') {
           gtag('event', 'lead_magnet_signup', {
