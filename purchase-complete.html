@@ -221,12 +221,17 @@
     try { adsSeen = !!localStorage.getItem(adsKey); } catch (e) {}
     if (p && p.value > 0 && !adsSeen) {
       try { localStorage.setItem(adsKey, '1'); } catch (e) {}
-      try {
-        gtag('event', 'conversion', {
-          send_to: 'AW-1016615342/ALsDCIH2k6UdEK6j4eQD',
-          value: p.value, currency: 'USD', transaction_id: sid
-        });
-      } catch (e) {}
+      // Google Ads: Stripe sales only (they carry a session_id). Zylvie sales
+      // (?p=anx9, no session_id) are counted by Zylvie's Success page code with
+      // Zylvie's own transaction ID, so firing here too would double count.
+      if (sid) {
+        try {
+          gtag('event', 'conversion', {
+            send_to: 'AW-1016615342/ALsDCIH2k6UdEK6j4eQD',
+            value: p.value, currency: 'USD', transaction_id: sid
+          });
+        } catch (e) {}
+      }
       try {
         fbq('track', 'Purchase',
           { value: p.value, currency: 'USD', content_name: p.name },
